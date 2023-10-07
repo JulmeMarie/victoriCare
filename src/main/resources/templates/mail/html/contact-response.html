@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:remove="all">Template for HTML email</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <p>
+            Bonjour M. <span th:text="${name}">nom de l'utilisateur</span>,
+        </p>
+        <p th:text="${response}">réponse à l'expéditeur</p>
+  
+        <p>
+          Vous aviez écrit ceci le <span th:text="${#dates.format(date, 'dd-MM-yyyy')}">date</span>:  
+          <br/><i>"<span th:text="${text}"> message de l'expéditeur</span>"</i> 
+        </p>
+        <p>
+        	Si vous avez récu ce message c'est que vous aviez écrit à  <a th:href="@{${frontEndUrl}}">l'association FMC Haïti</a>.<br/>
+            Nous vous remercions de nous avoir contacté.
+        </p>
+          <br><span th:text="${authorFirstName}">Prénom de l'auteur</span> <span th:text="${authorLastName}">Nom de l'auteur</span>
+         <br/>Cordialement, <br/><br/>
+            <em>Association FMC Haïti</em>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+.App {
+  text-align: center;
+}
+
+.page-body{
+  margin-top:8vh;
+}
+
+.TaskList {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-around;
+  width: 100%;
+  
+  flex-wrap: wrap;
+}
+
+.TaskList-task{
+  margin-top:3rem;
+  width:30%;
+  height:fit-content;
+  padding:2rem;
+  box-sizing: border-box;
+  background-color:var(--pink-color);
+  text-align:center;
+  border-radius:0.5rem;
+  font-size:1.2rem;
+  color: var(--main-color);
+  box-shadow: 1px 3px 5px var(--main-color);
+  text-transform: capitalize;
+}
+

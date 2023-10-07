@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:remove="all">Template for HTML email</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <p>
+            Bonjour, <span th:text="${firstname}"> </span> <span th:text="${lastname}"> </span>!
+        </p>
+        <p>
+            L'administrateur du site <b>FMC Haïti</b> vient de vous créer un compte. <br/>
+            Date de création de compte : <span th:text="${date}">19-02/2023</span>.
+        </p>
+        <p>Veuillez trouvez ci-dessous vos identifiants provisoires: </p>
+        <ul>
+            <li>Pseudo : <span th:text="${username}"></span></li>
+            <li>Mot de passe : <span th:text="${password}"></span></li>
+        </ul>
+        <p>
+        <p>Pensez à modifier vos identifiants lors de votre <a th:href="@{${frontEndUrl} + '#login'}">première connexion</a></p>
+         <br/>Cordialement, <br/><br/>
+            <em>Association FMC Haïti</em>
+        </p>
+    </body>
+</html>

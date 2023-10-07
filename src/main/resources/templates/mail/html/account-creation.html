@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:remove="all">Template for HTML email</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <div th:switch="${destination}">
+           <div th:case="'user'">
+               <p>
+              		Bonjour <span th:text="${userFirstname}"> </span> <span th:text="${userLastname}"> </span>,
+               </p>
+                <p>
+		            Nous avons le plaisir que vous annoncer que <span th:text="${authorFirstname}"> </span> <span th:text="${authorLastname}"> </span>,
+		            l'administrateur du site <b>FMC Haïti</b>, vient de vous créer un compte. <br/>
+		            Date de création de compte : <span th:text="${#dates.format(userCreateAt, 'dd-MM-yyyy')}">19-02/2023</span>.
+		        </p>
+		        <p>
+		        	Vous pouvez valider votre compte en cliquant sur :  
+		        	<a th:href="@{${frontEndUrl} + 'code/' + ${userAccountCode} + '/account/' + ${userId}}">Je valide mon compte</a>
+		        </p>
+           </div>
+           <div th:case="'author'">
+               <p>
+	              Bonjour <span th:text="${authorFirstname}"> </span> <span th:text="${authorLastname}"> </span>,
+	            </p>
+	             <p>
+		            Nous avons le plaisir de vous annoncer que votre nouveau membre a bien été enregistré sur le site <b>FMC Haïti</b>.<br/>
+		            <div>Nom : <span th:text="${userLastname}">nom de l'utilisateur</span></div>
+		            <div>Prénom : <span th:text="${userFirstname}">prénom de l'utilisateur</span></div><br/>
+		            <div>Date de création du compte : <span th:text="${#dates.format(userCreateAt, 'dd-MM-yyyy')}">19-02/2023</span>.</div>
+		        </p>
+		        <p> 
+		        	Un e-mail a été envoyé à votre invité. En cas de non reception, vous povez refaire la demande après 48h sur le site
+		        	<a th:href="@{${frontEndUrl}}">FMC Haïti</a>
+		        </p>
+	            
+	        </div>
+        </div>
+        
+         <p>
+	         <br/>Cordialement, <br/><br/>
+	            <em>Association FMC Haïti</em>
+        </p>
+    </body>
+</html>

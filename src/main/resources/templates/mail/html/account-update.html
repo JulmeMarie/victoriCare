@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:remove="all">Template for HTML email</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <div th:switch="${destination}">
+           <div th:case="'user'">
+               <p>
+              		Bonjour <span th:text="${userFirstname}"> </span> <span th:text="${userLastname}"> </span>,
+               </p>
+                <p>
+		            Votre compte vient d'être mis à jour par <span th:text="${authorFirstname}"> </span> <span th:text="${authorLastname}"> </span>,
+		            l'administrateur du site <b>FMC Haïti</b>. <br/>
+		         </p>
+		        <p>
+		        	Vous pouvez vous connecter pour visualiser les changements en cliquant sur :  
+		        	<a th:href="@{${frontEndUrl} + '#login/'}">Je me conecte sur FMC Haïti</a>
+		        </p>
+           </div>
+           <div th:case="'author'">
+               <p>
+	              Bonjour <span th:text="${authorFirstname}"> </span> <span th:text="${authorLastname}"> </span>,
+	            </p>
+	             <p>
+		            Nous avons le plaisir de vous annoncer que votre demande de mise à jour de membre a bien été prise en compte.<br/>
+		            <div><b>Membre mis à jour : </b></div>
+		            <div>Nom : <span th:text="${userLastname}">nom de l'utilisateur</span></div>
+		            <div>Prénom : <span th:text="${userFirstname}">prénom de l'utilisateur</span></div><br/>
+		          </p>
+		        <p> 
+		        	Note : Un e-mail a été envoyé à <span th:text="${userFirstname}"> </span> <span th:text="${userLastname}"> </span>  afin de l'informer de ces modifications.
+		        </p>
+	        </div>
+        </div>
+        
+         <p>
+	         <br/>Cordialement, <br/><br/>
+	            <em>Association FMC Haïti</em>
+        </p>
+    </body>
+</html>

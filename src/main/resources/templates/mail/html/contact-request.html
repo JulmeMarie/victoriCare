@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:remove="all">Template for HTML email</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <p>
+            Bonjour,
+        </p>
+        <p>
+            <i>M. <span th:text="${name}">nom de l'utilisateur</span> a écrit ceci :<i/>
+        </p>
+        <p th:text="${text}">Message de l'expéditeur</p>
+        <p>
+        	Si vous avez récu ce message c'est que vous faites partie des personnes désignées 
+        	pour répondre aux personnes qui contactent l'association <a th:href="@{${frontEndUrl}}">FMC Haïti</a>.<br/>
+        	Nous vous invitons à vous <a th:href="@{${frontEndUrl} + '#login/'}">connecter sur le site</a> avec vos identifiants afin de répondre à ce message.
+        </p>
+        <p>
+           <b>En répondant sur le site, votre adresse e-mail est protégée et seule l'adresse e-mail dédiée au site FMC Haïti sera visible par l'utilisateur.<b/>
+        </p>
+         <br/>Cordialement, <br/><br/>
+            <em>Association FMC Haïti</em>
+        </p>
+    </body>
+</html>
