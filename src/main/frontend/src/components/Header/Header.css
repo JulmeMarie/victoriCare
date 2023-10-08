@@ -1,68 +1,82 @@
 .Header {}
 
 
-.Header{
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    /*background-color:#dc3545;*/
-    /*background-image: url("../images/bebe.jpg");*/
-    background-position: center;
-    background-size: 100%;
-    color:white; 
-    height:8vh;
-    display:block;
-    text-align: center;
-    z-index: 500;
-    background:var(--main-color);
-    display:flex;
-    flex-direction: row;
-    justify-content:space-between;
-  
-    box-sizing: border-box;
-  }
-  
-  .Header-name{
-    font-family: var(--title-font-family);
-    font-size:1.7rem;
-    height:100%;
-    line-height:3.3rem;
-  }
-  
-  
-  .Header img {
-    height: 3rem;
-    width:3rem;
-    margin: 0.3rem;
-    border-radius:0.5rem;
-  }
-  
-  .Header-menu{
-     margin:0;
-     display:flex;
-     flex-direction:row;
-     
-     height:100%;
-  }
-  
-  .Header-menu li{
-    width:fit-content;
-    list-style: none;
-    line-height:3.5rem;
-    background-color:pink;
-    height:100%;
-    margin-left: 0.1rem;
-    
-  }
-  
-  .Header-menu li a{
-     display: block;
-     width: 100%;
-     height: 100%;
-     color:var(--main-color);
-     font-weight:bolder;
-     padding-left:1rem;
-     padding-right:1rem;
-     box-sizing: border-box;
-  }
-  
+.Header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  /*background-color:#dc3545;*/
+  /*background-image: url("../images/bebe.jpg");*/
+  background-position: center;
+  background-size: 100%;
+  color: white;
+  height: 8vh;
+  display: block;
+  text-align: center;
+  z-index: 500;
+  background: var(--main-color);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  box-sizing: border-box;
+}
+
+.wrapper-logo {
+  display: flex;
+  flex-direction: row;
+}
+
+.Header-app-name {
+  font-family: var(--title-font-family);
+  font-size: 1.7rem;
+  height: 100%;
+  line-height: 3.3rem;
+}
+
+
+.Header img {
+  height: 3rem;
+  width: 3rem;
+  margin: 0.3rem;
+  border-radius: 0.5rem;
+}
+
+.Header-menu {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  font-family: var(--title-font-family);
+  text-transform: capitalize;
+}
+
+.Header-menu li {
+  width: fit-content;
+  list-style: none;
+  line-height: 3.5rem;
+  background-color: var(--main-color);
+  height: 100%;
+  transition: all ease-in-out 0.5s;
+}
+
+.Header-menu li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: pink;
+  font-weight: bolder;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+.Header-menu li:hover a {
+  color: var(--main-color);
+}
+
+.Header-menu li:hover {
+  background-color: pink;
+  transition: all ease-in-out 0.5s;
+}

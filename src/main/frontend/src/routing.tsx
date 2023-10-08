@@ -3,10 +3,12 @@ import './index.css';
 import { Routes, Route } from 'react-router-dom';
 import Error404View from './views/Error404View/Error404View';
 import IndexView from './views/IndexView/IndexView';
+import HomeView from './views/HomeView/HomeView';
 
 const Routing = () => (
   <Routes>
     <Route path="/" element={<IndexView />} />
+    <Route path="/home" element={<HomeView />} />
     <Route path="*" element={<Error404View />} />
   </Routes>
 );

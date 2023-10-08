@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import styles from './HomeView.module.css';
+import './HomeView.css';
 
-interface HomeViewProps {}
+interface HomeViewProps { }
 
 const HomeView: FC<HomeViewProps> = () => (
-  <div className={styles.HomeView} data-testid="HomeView">
+  <div className='HomeView' data-testid="HomeView">
     HomeView Component
   </div>
 );

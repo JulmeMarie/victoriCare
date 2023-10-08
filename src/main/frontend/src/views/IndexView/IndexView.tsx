@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
-import styles from './IndexView.module.css';
+import './IndexView.css';
 
-interface IndexViewProps {}
+interface IndexViewProps { }
 
 const IndexView: FC<IndexViewProps> = () => (
-  <div className={styles.IndexView} data-testid="IndexView">
+  <div className='IndexView' data-testid="IndexView">
     IndexView Component
   </div>
 );
