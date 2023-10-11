@@ -21,7 +21,7 @@ const Language: FC<LanguageProps> = () => {
 
   return (
     <div className="Language" data-testid="Language" onClick={() => { setIsOpen(!isOpen) }}>
-      <div> <i className={"em em-" + lang}></i> {i18n.t("lang." + lang)}</div>
+      <div> <i className={"em em-" + lang}></i></div>
       {
         isOpen && <ul>
           {

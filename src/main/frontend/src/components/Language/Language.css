@@ -1,13 +1,13 @@
 .Language {
     position: relative;
     cursor: pointer;
-    width: 12rem;
 }
 
 .Language div {
     padding-right: 1rem;
     padding-left: 1rem;
     text-align: left;
+    border-left: solid white 1px;
 }
 
 .Language ul {
@@ -15,7 +15,8 @@
     background-color: blue;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 12rem;
+    right: 0;
 }
 
 .Language ul li {
