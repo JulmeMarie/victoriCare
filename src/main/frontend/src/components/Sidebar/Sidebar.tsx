@@ -1,12 +1,17 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useState } from 'react';
+import i18n from '../../utils/languages/I18N';
 import './Sidebar.css';
 
-interface SidebarProps {}
+interface SidebarProps {
 
-const Sidebar: FC<SidebarProps> = () => (
-  <div className="Sidebar">
-    Sidebar Component
-  </div>
-);
+}
+
+const Sidebar: FC<SidebarProps> = () => {
+  return (
+    <div className="Sidebar">
+      {i18n.t("headerTitle", { appName: 'victoriCare', year: '2023' })}
+    </div>
+  );
+}
 
 export default Sidebar;

@@ -1,0 +1,25 @@
+.Language {
+    position: relative;
+}
+
+.Language div {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.Language ul {
+    position: absolute;
+    background-color: blue;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.Language ul li {
+    width: inherit;
+    line-height: 2rem;
+    background-color: pink;
+    color: var(--main-color);
+    border-bottom: solid white 1px;
+
+}

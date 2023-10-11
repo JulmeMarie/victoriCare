@@ -1,0 +1,5 @@
+{
+    "translations": {
+        "headerTitle": "{{appName}} est une application de soins de l'année {{year}}"
+    }
+}

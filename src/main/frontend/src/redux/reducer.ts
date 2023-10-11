@@ -1,8 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { accountActions } from './actions/account-actions';
+import { appActions } from './actions/app-actions';
 
-export const accountSlice = createSlice({
-    name: "account_state",
+export const appSlice = createSlice({
+    name: "app_state",
     initialState: {
         status: {
             isLoading: false,
@@ -10,11 +10,23 @@ export const accountSlice = createSlice({
             error: null,
         },
         token: null,
-        user: null,
-        createAt: null,
+        user: {
+            userName: null,
+            sexe: null,
+            role: null,
+            logInAt: null,
+            profil: {
+                firstName: null,
+                lastName: null,
+                photo: null,
+                email: null,
+                signInAt: null,
+                lang: "fr",
+            },
+        },
     },
-    reducers: accountActions
+    reducers: appActions
 });
 
-export const { logIn, logOut, updatePassword, refreshToken, signin, checkAccount, updateAccount, deleteAccount } = accountSlice.actions;
+export const { logIn, logOut, updatePassword, refreshToken, signIn, updateUser, updateLang, initLang, deleteUser } = appSlice.actions;
 
