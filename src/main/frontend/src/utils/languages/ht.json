@@ -1,5 +1,16 @@
 {
     "translations": {
-        "headerTitle": "{{appName}} se yon aplikasyon pou pran swen bebe nan lane {{year}}"
+        "headerTitle": "{{appName}} se yon aplikasyon pou pran swen bebe nan lane {{year}}",
+        "lang": {
+            "en": "Anglè",
+            "fr": "Fransè",
+            "ht": "Kreyol Ayisyen",
+            "es": "Espanyol"
+        },
+        "menu": {
+            "home": "akey",
+            "events": "evenman",
+            "babycare": "swen bebe"
+        }
     }
 }

@@ -1,0 +1,16 @@
+{
+    "translations": {
+        "headerTitle": "{{appName}} es una applicacion para los ninos del ano {{year}}",
+        "lang": {
+            "en": "Englés",
+            "fr": "Francés",
+            "ht": "Criollo Hatiano",
+            "es": "Espanol"
+        },
+        "menu": {
+            "home": "bienvenida",
+            "events": "eventos",
+            "babycare": "cuidado bébé"
+        }
+    }
+}

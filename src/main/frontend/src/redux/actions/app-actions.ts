@@ -22,6 +22,7 @@ export const appActions = {
 
     updateLang: (state: any, action: PayloadAction<string>) => {
         state.user.profil.lang = action.payload;
+        localStorage.setItem("babycare-lang", action.payload);
         return state;
     },
     refreshToken: (state: any, action: PayloadAction) => {

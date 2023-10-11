@@ -1,5 +1,6 @@
 import { HomeFilled, CalendarFilled, SmileFilled } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
+import i18n from '../../utils/languages/I18N';
 import Language from '../Language/Language';
 import './Header.css';
 
@@ -7,9 +8,9 @@ const Header = () => {
     const Menu = () => {
         return (
             <ul className="Header-menu">
-                <li className='active'><Link to="/"><HomeFilled /> Accueil</Link> </li>
-                <li><Link to="/cares/current"><CalendarFilled /> événements</Link> </li>
-                <li><Link to="/cares/past"><SmileFilled /> Soins bébé</Link> </li>
+                <li className='active'><Link to="/"><HomeFilled /> {i18n.t("menu.home")} </Link> </li>
+                <li><Link to="/cares/current"><CalendarFilled /> {i18n.t("menu.events")}</Link> </li>
+                <li><Link to="/cares/past"><SmileFilled /> {i18n.t("menu.babycare")}</Link> </li>
                 <li><Language /></li>
             </ul>
         );

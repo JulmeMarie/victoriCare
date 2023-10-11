@@ -1,10 +1,13 @@
 .Language {
     position: relative;
+    cursor: pointer;
+    width: 12rem;
 }
 
 .Language div {
     padding-right: 1rem;
     padding-left: 1rem;
+    text-align: left;
 }
 
 .Language ul {
@@ -18,8 +21,17 @@
 .Language ul li {
     width: inherit;
     line-height: 2rem;
-    background-color: pink;
+    background-color: rgb(238, 226, 228);
     color: var(--main-color);
     border-bottom: solid white 1px;
+    text-align: left;
+    padding-left: 1rem;
+    white-space: nowrap;
 
+}
+
+.Language ul li:hover {
+    background-color: pink;
+
+    transition: all ease-in-out 0.5s;
 }
