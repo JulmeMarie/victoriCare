@@ -1,5 +1,16 @@
 {
     "translations": {
-        "headerTitle": "{{appName}} is an application for baby care of {{year}}"
+        "headerTitle": "{{appName}} is an application for baby care of {{year}}",
+        "lang": {
+            "en": "English",
+            "fr": "French",
+            "ht": "Haitian Creole",
+            "es": "Spanish"
+        },
+        "menu": {
+            "home": "home",
+            "events": "events",
+            "babycare": "baby care"
+        }
     }
 }

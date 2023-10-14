@@ -1,10 +1,13 @@
 .Language {
     position: relative;
+    cursor: pointer;
 }
 
 .Language div {
     padding-right: 1rem;
     padding-left: 1rem;
+    text-align: left;
+    border-left: solid white 1px;
 }
 
 .Language ul {
@@ -12,14 +15,24 @@
     background-color: blue;
     margin: 0;
     padding: 0;
-    width: 100%;
+    width: 12rem;
+    right: 0;
 }
 
 .Language ul li {
     width: inherit;
     line-height: 2rem;
-    background-color: pink;
+    background-color: rgb(238, 226, 228);
     color: var(--main-color);
     border-bottom: solid white 1px;
+    text-align: left;
+    padding-left: 1rem;
+    white-space: nowrap;
 
+}
+
+.Language ul li:hover {
+    background-color: pink;
+
+    transition: all ease-in-out 0.5s;
 }

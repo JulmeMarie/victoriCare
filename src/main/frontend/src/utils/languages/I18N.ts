@@ -37,19 +37,29 @@ class I18N {
         }
     }
 
+    static getObject = (key: string, element: any) => {
+        type ObjectKey = keyof typeof element;
+        const objectKey = key as ObjectKey;
+        return element[objectKey];
+    }
+
     t = (label: string, param?: Object) => {
 
         const translations = this.langJson.translations;
-        type ObjectKey = keyof typeof translations;
-        const textObj = label as ObjectKey;
-        let text = translations[textObj];
+
+        const tabLabel = label.split(".");
+
+        let object = I18N.getObject(tabLabel[0], translations);
+        if (tabLabel.length > 1) {
+            object = I18N.getObject(tabLabel[1], object);
+        }
 
         if (param) {
             Object.entries(param).forEach(([key, value]) => {
-                text = text.replaceAll("{{" + key + "}}", value);
+                object = object.replaceAll("{{" + key + "}}", value);
             });
         }
-        return text;
+        return object;
     }
 };
 

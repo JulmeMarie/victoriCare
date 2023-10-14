@@ -1,5 +1,16 @@
 {
     "translations": {
-        "headerTitle": "{{appName}} est une application de soins de l'année {{year}}"
+        "headerTitle": "{{appName}} est une application de soins de l'année {{year}}",
+        "lang": {
+            "en": "Anglais",
+            "fr": "Français",
+            "ht": "Créole Haïtien",
+            "es": "Espagnol"
+        },
+        "menu": {
+            "home": "accueil",
+            "events": "événements",
+            "babycare": "soins bébé"
+        }
     }
 }

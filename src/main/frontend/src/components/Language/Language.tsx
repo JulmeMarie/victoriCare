@@ -10,23 +10,25 @@ interface LanguageProps { }
 const Language: FC<LanguageProps> = () => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
-  const lang = useSelector((state: RootState) => state.app_state.user.profil.lang);
+  const lang = i18n.langStr;
+  const langArr = ["en", "fr", "ht", "es"];
 
-  const onLangChange = (lang: string) => {
+  const handleLangChange = (lang: string) => {
     i18n.setLang(lang).then(() => {
       dispatch(updateLang(lang));
-      localStorage.setItem("babicare-lang", lang);
     });
   }
 
   return (
     <div className="Language" data-testid="Language" onClick={() => { setIsOpen(!isOpen) }}>
-      <div>Langue : {lang}</div>
+      <div> <i className={"em em-" + lang}></i></div>
       {
         isOpen && <ul>
-          <li onClick={() => onLangChange('fr')}>fr</li>
-          <li onClick={() => onLangChange('en')}>en</li>
-          <li onClick={() => onLangChange('ht')}>ht</li>
+          {
+            langArr.map((key, index) =>
+              key !== lang && <li key={index} onClick={() => handleLangChange(key)}> <i className={"em em-" + key}></i> {i18n.t("lang." + key)}</li>
+            )
+          }
         </ul>
       }
     </div>
