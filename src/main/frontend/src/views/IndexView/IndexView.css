@@ -1,1 +1,17 @@
-.IndexView {}
+.IndexView {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+
+.IndexView>section:nth-child(1) {
+    width: 35%;
+}
+
+.IndexView>section:nth-child(2) {
+    width: 30%;
+}
+
+.IndexView>section:nth-child(3) {
+    width: 35%;
+}

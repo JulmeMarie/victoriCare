@@ -1,15 +1,16 @@
 .App {
   text-align: center;
+  width: 100vw;
 }
 
 .main-container {
   margin-top: 8vh;
-  background-image: url('../public/logo-t.png');
   background-repeat: no-repeat;
   background-position: center;
-  height: 80vh;
+  height: 85vh;
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 
 .TaskList {

@@ -11,6 +11,24 @@
             "home": "akey",
             "events": "evenman",
             "babycare": "swen bebe"
+        },
+        "login": {
+            "yourAccount": "Kont ou",
+            "babySitter": "Baby-sitter",
+            "email": "Adrès imel",
+            "password": "Modpas",
+            "typeLastname": "Antre siyati ou",
+            "typePassword": "Antre modpas ou",
+            "passwordForgotten": "Ou bliye modpas ou a",
+            "connect": "Konekte ou",
+            "yourLastname": "Siyati ou",
+            "associatedLastname": "Siyati ki asosye ak kont lan",
+            "accessCode": "Kòd aksè",
+            "typeAssociatedLastname": "Antre siyati ki asosye ak kont lan",
+            "typeAccessCode": "Antre kòd aksè a",
+            "typeEmail": "Antre adrès imèl ou a",
+            "send": "Voye li",
+            "authentication": "otantifikasyon"
         }
     }
 }

@@ -6,29 +6,28 @@ export const Util = class Util {
     return Date.parse(dateString);
   }
 
-  static validNom(nom: string) {
+  static checkName(nom: string) {
     if (!nom) return false;
     var re = /[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ_ \-\s-]{2,20}/;
     return re.test(nom);
   }
 
-  static validIdentifiant(identifiant: string) {
-    return Util.validEmail(identifiant) || Util.validPseudo(identifiant);
+  static checkID(identifiant: string) {
+    return Util.checkMail(identifiant) || Util.checkPseudo(identifiant);
   }
 
-  static validEmail(email: string) {
+  static checkMail(email: string) {
     const regex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
     return regex.test(email);
   }
 
-  static validPseudo(pseudo: string) {
+  static checkPseudo(pseudo: string) {
     const regex = /^[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ_-]{2,6}[0-9]{2,3}$/;
     return regex.test(pseudo);
   }
 
-  static validMotdepasse(password: string) {
+  static checkPassword(password: string) {
     const regex = /[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ_\-0-9]{5,10}/;
-    console.log("valid password" + regex.test(password));
     if (!regex.test(password)) return false;
     return password.replace(/[a-zA-ZáàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ_-]/ig, '').length >= 2;
   }
@@ -45,22 +44,3 @@ export const Util = class Util {
     return target;
   }
 }
-
-export const ACTION = {
-  BANNER: 'banner',
-  CLOSECURRENT: 'close',
-  ABOUT: 'about',
-  GUIDE: 'guide',
-  TERMS: 'terms',
-  CAREERS: 'careers',
-  EVENTGUEST: 'eventGuest',
-  EVENTLIST: 'eventList',
-  CONTACTLIST: 'contactList',
-  EVENTFORM: 'eventForm',
-  EVENTCODE: 'eventCode',
-  CONTACTFORM: 'contactForm',
-  LOGINFORM: 'loginForm',
-  SIGNINFORM: 'signinForm',
-  ACCOUNTFORM: 'accountForm',
-  EVENT: 'evenement'
-};

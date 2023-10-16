@@ -1,0 +1,22 @@
+.Tooltip {}
+
+.tooltip-text {
+    background: #139ee0;
+    color: #fff;
+    padding: 7px 15px;
+    border-radius: 50%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-left-radius: 50%;
+    width: 350px;
+    text-align: center;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+.tooltip-text::after {
+    content: "";
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #139ee0;
+    position: absolute;
+}

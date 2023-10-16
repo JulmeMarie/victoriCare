@@ -1,12 +1,16 @@
-:root{
-  --main-color : rgb(146, 56, 71) !important;
-  --lightpink-color : rgb(247, 230, 232,0.5);
-  --pink-color:rgb(248, 213, 218);
-  --table-row-color:rgb(243, 234, 235) !important;
-  --white-color : #fff !important;
-  --title-font-family : cursive !important;
-  --second-title-size:1.5rem !important;
-  --first-title-size:2rem !important;
+:root {
+  --main-color: rgb(146, 56, 71) !important;
+  --main-color-100: rgb(146, 56, 71, 0.1) !important;
+  --main-color-300: rgb(146, 56, 71, 0.3) !important;
+  --main-color-500: rgb(146, 56, 71, 0.5) !important;
+  --main-color-700: rgb(146, 56, 71, 0.7) !important;
+  --lightpink-color: rgb(247, 230, 232, 0.2);
+  --pink-color: rgb(248, 213, 218);
+  --table-row-color: rgb(243, 234, 235) !important;
+  --white-color: #fff !important;
+  --title-font-family: cursive !important;
+  --second-title-size: 1.5rem !important;
+  --first-title-size: 2rem !important;
 }
 
 body {
@@ -22,8 +26,32 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.page-body{
+
+.page-body {
   background-image: url("../public/logo.png");
   background-repeat: no-repeat;
-   background-position: center;
+  background-position: center;
+}
+
+.row {
+  width: 100%;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.col,
+.col-100 {
+  width: 100%;
+}
+
+.col-50 {
+  width: 50%;
+}
+
+.col-25 {
+  width: 25%;
+}
+
+.col-75 {
+  width: 75%;
 }

@@ -11,6 +11,24 @@
             "home": "accueil",
             "events": "événements",
             "babycare": "soins bébé"
+        },
+        "login": {
+            "yourAccount": "Votre compte",
+            "babySitter": "Baby-sitter",
+            "email": "E-mail",
+            "password": "Mot de passe",
+            "typeLastname": "Saisir votre nom de famille",
+            "typePassword": "Saisir votre mot de passe",
+            "passwordForgotten": "Mot de passe oublié",
+            "connect": "Se connecter",
+            "yourLastname": "Votre nom",
+            "associatedLastname": "Nom associé au compte",
+            "accessCode": "Code d'accès",
+            "typeAssociatedLastname": "Saisir le nom de famille associé au compte",
+            "typeAccessCode": "Saisir le code d'accès",
+            "typeEmail": "Saisir votre adresse e-mail",
+            "send": "Envoyer",
+            "authentication": "authentification"
         }
     }
 }

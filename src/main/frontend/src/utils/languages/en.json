@@ -11,6 +11,24 @@
             "home": "home",
             "events": "events",
             "babycare": "baby care"
+        },
+        "login": {
+            "yourAccount": "Your account",
+            "babySitter": "Baby-sitter",
+            "email": "E-mail",
+            "password": "Password",
+            "typeLastname": "Type your lastname",
+            "typePassword": "Type your password",
+            "passwordForgotten": "Password forgotten",
+            "connect": "To connect",
+            "yourLastname": "Your lastname",
+            "associatedLastname": "Account associated lastname",
+            "accessCode": "Access code",
+            "typeAssociatedLastname": "Type the account associated lastname",
+            "typeAccessCode": "Type the access code",
+            "typeEmail": "Type your e-mail address",
+            "send": "Send",
+            "authentication": "authentication"
         }
     }
 }

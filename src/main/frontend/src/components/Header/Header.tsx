@@ -19,8 +19,8 @@ const Header = () => {
     return (
         <header className="Header">
             <div className='wrapper-logo'>
-                <img src="/logo.png" alt="logo de victoriacare" />
-                <div className="Header-app-name">VictoriCare</div>
+                <img className="Header-logo-img" src="/logo192.png" alt="logo de victoriacare" />
+                <img className="Header-logo-name" src="/logo-name.png" alt="nom du logo de victoriacare" />
             </div>
             <Menu />
         </header>

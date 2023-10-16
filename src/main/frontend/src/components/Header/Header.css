@@ -23,18 +23,16 @@
   flex-direction: row;
 }
 
-.Header-app-name {
-  font-family: var(--title-font-family);
-  font-size: 1.7rem;
-  height: 100%;
-  line-height: 3.3rem;
-}
-
-.Header img {
+.Header .Header-logo-img {
   height: 3rem;
   width: 3rem;
   margin: 0.3rem;
-  border-radius: 0.5rem;
+}
+
+.Header .Header-logo-name {
+  height: 1.8rem;
+  margin: 0.3rem;
+  margin: auto;
 }
 
 .Header-menu {
