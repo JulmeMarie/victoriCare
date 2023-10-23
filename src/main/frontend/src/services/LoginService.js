@@ -1,6 +1,6 @@
-import {HttpService} from "./HttpService";
-import {EAlertTypes} from "../Utils/Enums";
-import {setOnlineUser, setPage, resetContacts, resetCommons} from "../redux/reducer";
+import { HttpService } from "./HttpService";
+import { EAlertTypes } from "../utils/Enums";
+import { setOnlineUser, setPage, resetContacts, resetCommons } from "../redux/reducer";
 
 const DELAY = 58 * 60 * 1000; //19mn
 const LOGIN_ENDPOINT_CONNECTION = "right-anm/login";
@@ -8,7 +8,7 @@ const TOKEN_ENDPOINT_CONNECTION = "token";
 const ADM_LOGOUT_ENDPOINT_CONNECTION = "right-adm/logout";
 const USER_LOGOUT_ENDPOINT_CONNECTION = "right-usr/logout";
 
-export class ConnectionService {
+export class LoginService {
   data = {};
 
   setIntervalRefreshToken = () => {
@@ -17,21 +17,21 @@ export class ConnectionService {
     }, DELAY);
   };
   static newInstance() {
-    return new ConnectionService();
+    return new LoginService();
   }
   generateToken = async () => {
-    
+
     return new Promise((resolve, reject) => {
       HttpService.read(TOKEN_ENDPOINT_CONNECTION).then(response => {
-        if(response.ok) {
-          ConnectionService.setTokenToLocalStorage(response.data.token);
+        if (response.ok) {
+          LoginService.setTokenToLocalStorage(response.data.token);
           this.data.dispatch(setOnlineUser(response.data.createBy));
           resolve()
         }
         else {
           console.error("Echec lors de la récupération du token");
-          if(ConnectionService.getTokenFromLocalStorage() != null) {
-            ConnectionService.clearLocalStorage();
+          if (LoginService.getTokenFromLocalStorage() != null) {
+            LoginService.clearLocalStorage();
             return this.generateToken();
           }
           reject();
@@ -50,7 +50,7 @@ export class ConnectionService {
     ).then(response => {
       this.data.setLoading(false);
       if (response.ok) {
-        ConnectionService.setTokenToLocalStorage(response.data.token);
+        LoginService.setTokenToLocalStorage(response.data.token);
         this.data.setResult({
           type: EAlertTypes.SUCCESS,
           message: "Authentification réussie",
@@ -77,7 +77,7 @@ export class ConnectionService {
       this.data.dispatch(resetContacts());
       this.data.dispatch(resetCommons());
       if (response.ok) {
-        ConnectionService.setTokenToLocalStorage(response.data.token);
+        LoginService.setTokenToLocalStorage(response.data.token);
         this.data.dispatch(setOnlineUser(response.data.createBy));
       }
       this.data.navigate("/");
@@ -85,11 +85,11 @@ export class ConnectionService {
   };
 
   dashboardGate = () => {
-    if (ConnectionService.getTokenFromLocalStorage()) {
+    if (LoginService.getTokenFromLocalStorage()) {
       this.data.dispatch(setPage("dashboard"));
     } else {
-        this.generateToken();
-        this.data.navigate("/");
+      this.generateToken();
+      this.data.navigate("/");
     }
   };
 
@@ -104,7 +104,7 @@ export class ConnectionService {
           token = fmcToken.token;
         }
         else {
-          ConnectionService.clearLocalStorage();
+          LoginService.clearLocalStorage();
         }
       }
     } catch (e) {
@@ -129,7 +129,7 @@ export class ConnectionService {
   };
 
   validateTextField = (e, formValues) => {
-    this.data.setFormValues({...formValues, [e.target.id]: e.target.value});
+    this.data.setFormValues({ ...formValues, [e.target.id]: e.target.value });
   };
 
   submitForm = (e, formValues) => {

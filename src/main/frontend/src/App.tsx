@@ -4,7 +4,6 @@ import { BrowserRouter } from 'react-router-dom';
 import Routing from './routing';
 import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
-import Sidebar from './components/Sidebar/Sidebar';
 import { useSelector } from 'react-redux';
 import { RootState } from './redux/store';
 const App = () => {
@@ -16,7 +15,6 @@ const App = () => {
       <><Header />
         <main className='main-container'>
           <Routing />
-          <Sidebar />
         </main>
         <Footer />
       </>

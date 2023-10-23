@@ -1,4 +1,4 @@
-import {ConnectionService} from "./ConnectionService";
+import { ConnectionService } from "./LoginService";
 
 const baseUrl = 'http://ec2-35-180-67-64.eu-west-3.compute.amazonaws.com:5000/api/';
 //const baseUrl = 'http://ec2-35-180-83-119.eu-west-3.compute.amazonaws.com:8080/fmc-api/api/';
@@ -7,95 +7,95 @@ const successMessage = "Opération réussie.";
 const errorMessage = "Une erreur s'est produite";
 
 export const HttpService = {
-    headers : (isJson = false) => {
+    headers: (isJson = false) => {
         let token = ConnectionService.getTokenFromLocalStorage();
-        
-        if(token && isJson) {
+
+        if (token && isJson) {
             return {
-                "Content-Type":"application/json",
-                "Authorization":"Bearer " + token,
-                "Fmc-Apikey":apiKey,
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + token,
+                "Fmc-Apikey": apiKey,
             }
         }
-        else if(token) {
+        else if (token) {
             return {
-                "Authorization":"Bearer " + token,
-                "Fmc-Apikey":apiKey,
+                "Authorization": "Bearer " + token,
+                "Fmc-Apikey": apiKey,
             }
         }
         else {
             return {
-                "Content-Type":"application/json",
-                "Fmc-Apikey":apiKey,
+                "Content-Type": "application/json",
+                "Fmc-Apikey": apiKey,
             }
         }
     },
 
-    responseData : async (response, withData = true) => {
+    responseData: async (response, withData = true) => {
         return {
-            ok : response.ok,
-            message :  response.ok ? successMessage : errorMessage,
-            data : response.ok && withData ? await response.json() : null
-        } 
+            ok: response.ok,
+            message: response.ok ? successMessage : errorMessage,
+            data: response.ok && withData ? await response.json() : null
+        }
     },
 
-    create: async (body, endpoint, contentType, withResponse) =>{
-       try {
-            let response = await fetch(baseUrl + endpoint , {
+    create: async (body, endpoint, contentType, withResponse) => {
+        try {
+            let response = await fetch(baseUrl + endpoint, {
                 method: "PUT",
                 headers: HttpService.headers(contentType === "JSON"),
-                body  : body
+                body: body
             });
-            return  HttpService.responseData(response, withResponse);
-       }
-       catch(err) {
-          console.error(err);
-          return  HttpService.responseData({}, withResponse);
-       }
-       
-    },
-
-    update : async (body, endpoint, contentType, withResponse) => {
-        try{
-            let response = await fetch(baseUrl + endpoint , {
-                    method:"POST", 
-                    headers:HttpService.headers(contentType === "JSON"),
-                    body:body
-                });
-
-            return  HttpService.responseData(response, withResponse);
+            return HttpService.responseData(response, withResponse);
         }
-        catch(err) {
+        catch (err) {
             console.error(err);
-            return  HttpService.responseData({}, withResponse);
+            return HttpService.responseData({}, withResponse);
+        }
+
+    },
+
+    update: async (body, endpoint, contentType, withResponse) => {
+        try {
+            let response = await fetch(baseUrl + endpoint, {
+                method: "POST",
+                headers: HttpService.headers(contentType === "JSON"),
+                body: body
+            });
+
+            return HttpService.responseData(response, withResponse);
+        }
+        catch (err) {
+            console.error(err);
+            return HttpService.responseData({}, withResponse);
         }
     },
 
-    delete : async (endpoint, withResponse) => {
-        try{
-            let response = await  fetch(baseUrl + endpoint , {
-                method: "DELETE", 
+    delete: async (endpoint, withResponse) => {
+        try {
+            let response = await fetch(baseUrl + endpoint, {
+                method: "DELETE",
                 headers: HttpService.headers()
             });
-            return  HttpService.responseData(response, withResponse);
+            return HttpService.responseData(response, withResponse);
         }
-        catch(err) {
+        catch (err) {
             console.error(err);
-            return  HttpService.responseData({}, withResponse);
+            return HttpService.responseData({}, withResponse);
         }
     },
 
-    read : async (endpoint) =>{
-        try{
-            let response = await  fetch(baseUrl + endpoint , {
-                    method: "GET", 
-                    headers: HttpService.headers()
-                });
-            return  HttpService.responseData(response);
+    read: async (endpoint) => {
+        try {
+            let response = await fetch(baseUrl + endpoint, {
+                method: "GET",
+                headers: HttpService.headers()
+            });
+            return HttpService.responseData(response);
         }
-        catch(err) {
+        catch (err) {
             console.error(err);
-            return  HttpService.responseData({});
+            return HttpService.responseData({});
         }
     },
 }

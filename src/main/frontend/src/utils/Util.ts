@@ -12,6 +12,18 @@ export const Util = class Util {
     return re.test(nom);
   }
 
+  static checkSubject(subject: string) {
+    if (!subject) return false;
+    var re = /[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ_ \-\s-]{2,50}/;
+    return re.test(subject);
+  }
+
+  static checkMessage(message: string) {
+    if (!message) return false;
+    var re = /[a-zA-Z0-9áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ_ \-\s-]{10,500}/;
+    return re.test(message);
+  }
+
   static checkID(identifiant: string) {
     return Util.checkMail(identifiant) || Util.checkPseudo(identifiant);
   }

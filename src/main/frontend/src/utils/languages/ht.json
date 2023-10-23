@@ -29,6 +29,32 @@
             "typeEmail": "Antre adrès imèl ou a",
             "send": "Voye li",
             "authentication": "otantifikasyon"
+        },
+        "signin": {
+            "register": "Inskription",
+            "email": "Adrès imel",
+            "password1": "Modpas",
+            "password2": "Modpas",
+            "typeEmail": "Antre adrès imèl ou an",
+            "typePassword1": "Kreye modpas ou",
+            "checkPassword2": "Konfime modpas ou a",
+            "validate": "Inskrim"
+        },
+        "contact": {
+            "joining": "Kontakte nou",
+            "email": "E-mail",
+            "name": "Nom",
+            "typeEmail": "Antre adres imel ou",
+            "yourName": "Antre nom ou",
+            "subject": "chwazi sijè mesaj ou a",
+            "inputSelect1": "Problèm avek kont mwen",
+            "inputSelect2": "Qeustion konsenan kont mwen an",
+            "inputSelect3": "Echek poum konektem ak kont mwen ",
+            "inputSelect4": "Yon sujeksyon ou byen yon remak?",
+            "inputSelect5": "Lot kesyon",
+            "message": "Antre mesaj ou a",
+            "messageFields": "Bonjou mwen kontakte nou paske....",
+            "send": "voye mesaj"
         }
     }
 }
