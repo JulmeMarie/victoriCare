@@ -29,6 +29,33 @@
             "typeEmail": "Type your e-mail address",
             "send": "Send",
             "authentication": "authentication"
+        },
+        "signin": {
+            "register": "Inscription",
+            "email": "E-mail",
+            "password1": " Passeword",
+            "password2": "Password",
+            "typeEmail": "Type your e-mail address",
+            "typePassword1": "Create your password",
+            "checkPassword2": "Confirm your password",
+            "validate": "Signin"
+        },
+        "contact": {
+            "joining": "Contact us",
+            "name": "Name",
+            "yourName": "Type your name",
+            "email": "E-mail",
+            "typeEmail": "Type your e-mail address",
+            "selectForm": "Select",
+            "subject": "Select the subject of your message",
+            "inputSelect1": "Problem with my account",
+            "inputSelect2": "Question about my account",
+            "inputSelect3": "Connection Failure",
+            "inputSelect4": "A suggestion or comment ?",
+            "inputSelect5": "Others",
+            "message": "Your message",
+            "messageFields": "Hello, I am contacting you because....",
+            "send": "Send my message"
         }
     }
 }

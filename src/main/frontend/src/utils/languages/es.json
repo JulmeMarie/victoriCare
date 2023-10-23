@@ -29,6 +29,32 @@
             "typeEmail": "Escribe tu correo electrónico",
             "send": "Enviar",
             "authentication": "autenticación"
+        },
+        "signin": {
+            "register": "Inscripción",
+            "email": "Email",
+            "password1": " Contraseña",
+            "password2": "Contraseña",
+            "typeEmail": "Escribe tu correo electrónico",
+            "typePassword1": "Crea tu contraseña",
+            "checkPassword2": "Confirmar la contraseña",
+            "validate": "Inscribirse"
+        },
+        "contact": {
+            "joining": "Contáctenos",
+            "email": "E-mail",
+            "name": "Apellido",
+            "typeEmail": "Introduce tu dirección de correo electrónico",
+            "yourName": "Introduzca su nombre",
+            "subject": "Elige el asunto de tu mensaje",
+            "inputSelect1": "Problema con mi cuenta",
+            "inputSelect2": "Pregunta sobre mi cuenta",
+            "inputSelect3": "Fallo de conexión",
+            "inputSelect4": "A suggestion or comment?",
+            "inputSelect5": "Otros",
+            "message": "Ingrese su mensaje",
+            "messageFields": "Hola, me comunico contigo porque....",
+            "send": "Enviar mi mensaje"
         }
     }
 }

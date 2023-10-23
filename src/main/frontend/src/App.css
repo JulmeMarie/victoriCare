@@ -4,10 +4,9 @@
 }
 
 .main-container {
-  margin-top: 8vh;
+  margin-top: 3.5rem;
   background-repeat: no-repeat;
   background-position: center;
-  height: 85vh;
   display: flex;
   flex-direction: row;
   width: 100%;

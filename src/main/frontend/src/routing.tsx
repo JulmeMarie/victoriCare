@@ -4,12 +4,12 @@ import { Routes, Route } from 'react-router-dom';
 import Error404View from './views/Error404View/Error404View';
 import IndexView from './views/IndexView/IndexView';
 import HomeView from './views/HomeView/HomeView';
-import LogInForm from './components/LogInForm/LogInForm';
+import LogInForm from './components/Forms/LogInForm/LogInForm';
 
 const Routing = () => (
   <Routes>
     <Route path="/" element={<IndexView />} >
-      <Route path="" element={<LogInForm />} />
+      <Route path="/login" element={<LogInForm />} />
     </Route>
     <Route path="/home" element={<HomeView />} />
     <Route path="*" element={<Error404View />} />
