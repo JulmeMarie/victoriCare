@@ -3,15 +3,13 @@ import './index.css';
 import { Routes, Route } from 'react-router-dom';
 import Error404View from './views/Error404View/Error404View';
 import IndexView from './views/IndexView/IndexView';
-import HomeView from './views/HomeView/HomeView';
-import LogInForm from './components/Forms/LogInForm/LogInForm';
+import AboutView from './views/AboutView/AboutView';
 
 const Routing = () => (
   <Routes>
     <Route path="/" element={<IndexView />} >
-      <Route path="/login" element={<LogInForm />} />
+      <Route path="cares/current" element={<AboutView />} />
     </Route>
-    <Route path="/home" element={<HomeView />} />
     <Route path="*" element={<Error404View />} />
   </Routes>
 );

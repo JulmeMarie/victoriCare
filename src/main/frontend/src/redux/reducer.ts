@@ -10,6 +10,7 @@ export const appSlice = createSlice({
             error: null,
         },
         token: null,
+        scroll: 0,
         user: {
             userName: null,
             sexe: null,
@@ -28,5 +29,5 @@ export const appSlice = createSlice({
     reducers: appActions
 });
 
-export const { logIn, logOut, updatePassword, refreshToken, signIn, updateUser, updateLang, initLang, deleteUser } = appSlice.actions;
+export const { logIn, logOut, updatePassword, refreshToken, signIn, updateUser, updateLang, initLang, deleteUser, setScroll } = appSlice.actions;
 

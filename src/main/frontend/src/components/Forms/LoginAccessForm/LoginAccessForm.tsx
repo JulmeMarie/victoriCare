@@ -1,8 +1,11 @@
 import React, { FC, useState } from 'react';
+import { FaLock } from 'react-icons/fa';
 import i18n from '../../../utils/languages/I18N';
 import './LoginAccessForm.css';
 
-interface LoginAccessFormProps { }
+interface LoginAccessFormProps {
+  setFormId: (id: string) => void,
+}
 
 let iForm = {
   yourName: null,
@@ -12,7 +15,7 @@ let iForm = {
   disable: true
 }
 
-const LoginAccessForm: FC<LoginAccessFormProps> = () => {
+const LoginAccessForm: FC<LoginAccessFormProps> = ({ setFormId }) => {
   const [form, setForm] = useState(iForm);
 
   const handleChange = (event: any) => {
@@ -25,7 +28,16 @@ const LoginAccessForm: FC<LoginAccessFormProps> = () => {
   }
 
   return (
-    <div className="LoginAccessForm" data-tested-id="LoginAccessForm">
+    <section className="LoginAccessForm" data-tested-id="LoginAccessForm">
+      <div className='row'>
+        <h1 className='title form-title'><FaLock /> {i18n.t('login.authentication')}</h1>
+      </div>
+      <div className='row'>
+        <div
+          className='form-link head-form-link'
+          onClick={() => { setFormId("login-owner-form") }}>{i18n.t("login.parent")}
+        </div>
+      </div>
       <form method='post' action='#' id={iForm.id} onSubmit={handleSubmit}>
         <div className='row'>
           <label className='col-100' htmlFor="yourName"> {i18n.t("login.yourLastname")} :  </label>
@@ -55,7 +67,7 @@ const LoginAccessForm: FC<LoginAccessFormProps> = () => {
           <input type="submit" value={i18n.t("login.connect")} disabled={disable} />
         </div>
       </form>
-    </div>
+    </section>
   )
 }
 

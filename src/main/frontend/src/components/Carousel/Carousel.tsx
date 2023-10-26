@@ -1,4 +1,6 @@
 import React, { FC } from 'react';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../redux/store';
 import './Carousel.css';
 interface CarouselProps { }
 
@@ -31,26 +33,26 @@ const carouselItems = [
 ]
 
 const Carousel: FC<CarouselProps> = () => {
+  const scroll = useSelector((state: RootState) => state.app_state.scroll);
+  const maxHeight = 250;
+  const minHeight = 150;
+
   return (
-    <section className="Carousel" data-testid="Carousel">
-      <div className='carousel-wrapper'>
-        <div className='carousel-box'>
-          <div className='carousel-items-box'>
+    <section className={scroll >= minHeight ? "Carousel hide" : "Carousel show"} data-testid="Carousel" style={{ height: (maxHeight - scroll) + 'px' }}>
+      <div className='Carousel-wrapper'>
+        <div className='Carousel-box'>
+          <div className='Carousel-items'>
             {carouselItems.map((item, index) =>
-              <div key={index} className='carousel-item'>
-                <h2 className='carousel-item__title'>{item.title1}</h2>
-                <h1 className='carousel-item__title'>{item.title2}</h1>
-                <div className='carousel-item__description'>{item.description}</div>
-                <div className='carousel-link'>
+              <div key={index} className='Carousel-item'>
+                <h2 className='Carousel-item__title'>{item.title1}</h2>
+                <h1 className='Carousel-item__title'>{item.title2}</h1>
+                <div className='Carousel-item__description'>{item.description}</div>
+                <div className='Carousel-item__link'>
                   <a href={item.link}> En savoir plus </a>
                   <a href='>/signin'> Inscrivez-vous </a>
                 </div>
               </div>)}
           </div>
-        </div>
-        <div className='carousel-image-box'>
-          <div className='carousel-baby-image'></div>
-          <div className='carousel-image'></div>
         </div>
       </div>
     </section>

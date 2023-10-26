@@ -1,0 +1,11 @@
+.AboutView {
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    box-sizing: border-box;
+    background-color: var(--lightpink-color);
+    width: 70%;
+}
+
+.AboutView p {
+    text-align: justify;
+}

@@ -39,7 +39,7 @@ const ContactForm: FC<ContactFormProps> = () => {
   return (
     <div className="ContactForm" data-testid="ContactForm">
       <div className='row'>
-        <h3 className='form-title'> {i18n.t("contact.joining")}</h3>
+        <h4 className='form-title'> {i18n.t("contact.joining")}</h4>
       </div>
       <div className='row'>
         <form method='post' action='#' id={iContact.id} onSubmit={(event) => handleSubmit(event)}>

@@ -1,9 +1,10 @@
 import React, { FC, useEffect, useState } from 'react';
+import { FaLock } from 'react-icons/fa';
 import i18n from '../../../utils/languages/I18N';
 import { Util } from '../../../utils/Util';
+import Alert from '../../Alert/Alert';
 //import { LoginService } from '../../../services/LoginService';
 import './LoginOwnerForm.css';
-import { Alert } from 'antd';
 
 interface IResult {
   isLoading: boolean,
@@ -38,8 +39,6 @@ const LoginOwnerForm: FC<LoginOwnerFormProps> = ({ setFormId }) => {
     iForm.disable = !(Util.checkMail(iForm.email) && Util.checkPassword(iForm.password));
     setForm(iForm);
   }
-
-
   const handleSubmit = (event: any) => {
     event.preventDefault();
     if (iForm.disable) return false;
@@ -48,10 +47,19 @@ const LoginOwnerForm: FC<LoginOwnerFormProps> = ({ setFormId }) => {
   }
 
   return (
-    <div className='LoginOwnerForm' data-tested-id='LoginOwnerForm'>
+    <section className='LoginOwnerForm' data-tested-id='LoginOwnerForm'>
+      <div className='row'>
+        <h1 className='title form-title'><FaLock /> {i18n.t('login.authentication')}</h1>
+      </div>
+      <div className='row'>
+        <div
+          className='form-link head-form-link'
+          onClick={() => { setFormId("login-access-form") }}>{i18n.t("login.babysitter")}
+        </div>
+      </div>
       <form method='post' action='#' id={iForm.id} onSubmit={(event) => handleSubmit(event)}>
         <div className='row'>
-          {result && result.isError && <Alert message="une erreur s'est produite" showIcon type='error' />}
+          {result && result.isError && <Alert message="une erreur s'est produite" showIcon type='ERROR' />}
         </div>
         <div className='row input-row'>
           <label className={" col-100 " + (iForm.email && iForm.email.length > 0 ? "" : "active")} htmlFor="email"> {i18n.t("login.email")}  </label>
@@ -77,14 +85,20 @@ const LoginOwnerForm: FC<LoginOwnerFormProps> = ({ setFormId }) => {
         </div>
         <div className='row'>
           <div
-            className='form-password-forgot'
+            className='form-link'
             onClick={() => { setFormId("login-recovery-form") }}>{i18n.t("login.passwordForgotten")} ?
+          </div>
+        </div>
+        <div className='row'>
+          <div
+            className='form-link'
+            onClick={() => { setFormId("signin-form") }}>{i18n.t("login.noaccount")} ?
           </div>
         </div>
         <div className='row form-footer'>
           <input type="submit" value={i18n.t("login.connect")} disabled={form.disable} />
         </div>
-      </form ></div >);
+      </form ></section >);
 };
 
 export default LoginOwnerForm;

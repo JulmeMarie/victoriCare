@@ -30,7 +30,11 @@
             "typeAccessCode": "Saisir le code d'accès",
             "typeEmail": "Saisir votre adresse e-mail",
             "send": "Envoyer",
-            "authentication": "authentification"
+            "authentication": "authentification",
+            "babysitter": "Si vous êtes baby-sitter, cliquez-ici",
+            "parent": "Si vous êtes parent, cliquez-ici.",
+            "clickHere": "cliquez ici",
+            "noaccount": "Pas de compte, isncrivez-vous."
         },
         "signin": {
             "register": "Inscription",
@@ -40,7 +44,11 @@
             "typeEmail": "Saisir votre adresse e-mail",
             "typePassword1": "Créer votre mot de passe",
             "checkPassword2": "Confirmer votre mot de passe",
-            "validate": "S'inscrire"
+            "validate": "S'inscrire",
+            "havingaccount": "J'ai un compte, je me connecte."
+        },
+        "recovery": {
+            "title": "Récupération"
         },
         "contact": {
             "joining": "Contactez-nous",

@@ -20,6 +20,11 @@ export const appActions = {
         return state;
     },
 
+    setScroll: (state: any, action: PayloadAction<number>) => {
+        const scroll = action.payload < 0 ? 0 : action.payload;
+        state.scroll = scroll;
+    },
+
     updateLang: (state: any, action: PayloadAction<string>) => {
         state.user.profil.lang = action.payload;
         localStorage.setItem("babycare-lang", action.payload);

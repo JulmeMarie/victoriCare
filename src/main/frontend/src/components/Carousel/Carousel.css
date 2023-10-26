@@ -1,131 +1,114 @@
 .Carousel {
     width: 100%;
-    height: 17rem;
-    background-color: rgba(226, 95, 117, 0.3);
+    position: absolute;
+    background-color: rgb(249, 171, 183);
     /*rgb(188, 79, 97);*/
-
 }
 
-.carousel-wrapper {
+section.hide {
+    display: none;
+}
+
+section.show {
+    display: block;
+}
+
+.Carousel-wrapper {
     position: relative;
-    width: 75%;
+    width: 80%;
+    height: inherit;
     margin: auto;
     margin-top: 3rem;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
     background-color: rgb(206, 97, 115);
+    background-image: url('../../../public/bg.png'), url('../../../public/logo-t.png');
+    background-repeat: no-repeat;
+    background-position: right 20em bottom 1%, right 1rem bottom 1%;
+    background-size: contain;
 }
 
-.carousel-box {
+.Carousel-box {
     width: 75%;
-    height: 17rem;
+    height: inherit;
     overflow: hidden;
-    transition: all 2s ease-in-out;
     z-index: 2;
     border: solid transparent 2rem;
     box-sizing: border-box;
-    /*
-    background-image: url('../../../public/bg.png');
-    background-position: bottom;*/
 }
 
-.carousel-image-box {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    box-sizing: border-box;
-    z-index: 1;
-    padding: 2rem;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-}
-
-.carousel-image {
-    width: 40%;
-    height: inherit;
-    background-image: url('../../../public/logo-t.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.carousel-baby-image {
-    margin-right: 10%;
-    width: 50%;
-    height: inherit;
-    background-image: url('../../../public/bg.png');
-    background-position: center;
-    background-size: cover;
-}
-
-.carousel-items-box {
+.Carousel-items {
     display: flex;
     flex-direction: row;
     width: 404%;
     margin-right: 0;
-    transition: all 2s ease-in-out;
     animation: 30s linear 1s infinite running slidein;
-    /*animation: 30s linear 1s infinite alternate slidein;*/
     z-index: 2;
     position: relative;
     height: 100%;
 }
 
-.carousel-item {
+.Carousel-items:hover {
+    animation-play-state: paused;
+}
+
+.Carousel-item {
     width: 101%;
     z-index: 1;
     position: relative;
-    height: 100%;
+    height: inherit;
 }
 
-.carousel-item__title {
+.Carousel-item__title {
     text-transform: uppercase;
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-family: Roboto, sans-serif;
     font-weight: 700;
+    text-align: left;
 }
 
-h1.carousel-item__title {
+h1.Carousel-item__title {
     color: white;
-    margin-bottom: 1rem;
-    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
 
-h2.carousel-item__title {
+h2.Carousel-item__title {
     color: rgb(149, 221, 46);
     margin-bottom: 0.5rem;
 }
 
-.carousel-item__description {
-    font-style: italic;
+.Carousel-item__description {
     color: white;
-    max-width: 35rem;
+    max-width: 50%;
     margin-left: 0;
     text-align: justify;
+    font-size: 0.9rem;
 }
 
-.carousel-link {
+.Carousel-item__link {
     position: absolute;
     left: 0;
     bottom: 0;
     text-transform: uppercase;
+    width: 50%;
+    text-align: left;
+    background-color: rgb(206, 97, 115);
 }
 
-.carousel-link a {
+.Carousel-item__link a {
     display: inline-block;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     box-shadow: 1px 1px 3px white;
 }
 
-.carousel-link a:nth-child(1) {
+.Carousel-item__link a:nth-child(1) {
     background-color: rgb(149, 221, 46);
     color: var(--main-color);
 }
 
-.carousel-link a:nth-child(2) {
+.Carousel-item__link a:nth-child(2) {
     background-color: white;
     margin-left: 1rem;
     color: var(--main-color);
@@ -133,37 +116,30 @@ h2.carousel-item__title {
 
 @keyframes slidein {
     0% {
-        margin-left: 0;
-        visibility: hidden;
+        transform: translateX(0);
     }
 
     3% {
-        margin-left: -101%;
-        visibility: visible;
+        transform: translateX(-25%);
     }
 
     30% {
-        margin-left: -101%;
+        transform: translateX(-25%);
     }
 
     32% {
-        margin-left: -202%;
+        transform: translateX(-50%);
     }
 
     75% {
-        margin-left: -202%;
+        transform: translateX(-50%);
     }
 
     78% {
-        margin-left: -303%;
-    }
-
-    99% {
-        margin-left: -303%;
+        transform: translateX(-75%);
     }
 
     100% {
-        margin-left: -303%;
-        visibility: hidden;
+        transform: translateX(-75%);
     }
 }

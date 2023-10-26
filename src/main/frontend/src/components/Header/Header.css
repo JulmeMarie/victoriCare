@@ -1,42 +1,53 @@
 .Header {
   position: fixed;
   top: 0;
-  width: 100vw;
+  width: 100%;
   /*background-color:#dc3545;*/
   /*background-image: url("../images/bebe.jpg");*/
   background-position: center;
   background-size: 100%;
   color: white;
-  height: 3.5rem;
   display: block;
   text-align: center;
   z-index: 500;
-  background: var(--main-color);
+  box-sizing: border-box;
 }
 
 .Header nav {
-  width: 75%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   margin: auto;
   justify-content: space-between;
+  height: 3.5rem;
+  background: var(--main-color);
 }
 
 .wrapper-logo {
   display: flex;
   flex-direction: row;
+  margin-left: 5%;
 }
 
-.Header .Header-logo-img {
+.Header .Header-logo-image {
   height: 3rem;
   width: 3rem;
   margin: 0.3rem;
+  background-image: url('../../../public/logo192.png');
+  background-position: center;
+  background-size: cover;
+  display: block;
 }
 
 .Header .Header-logo-name {
   height: 1.8rem;
+  width: 10rem;
   margin: 0.3rem;
   margin: auto;
+  background-image: url('../../../public/logo-name.png');
+  background-position: center;
+  background-size: cover;
+  display: block;
 }
 
 .Header-menu {
@@ -47,6 +58,8 @@
   font-family: var(--title-font-family);
   text-transform: capitalize;
   position: relative;
+  margin-right: 5%;
+  z-index: 2;
 }
 
 .Header-menu li {
@@ -55,6 +68,7 @@
   background-color: var(--main-color);
   height: 100%;
   transition: all ease-in-out 0.5s;
+  box-sizing: border-box;
 }
 
 .Header-menu>li {
@@ -87,4 +101,14 @@
 .Header-menu>li:hover {
   background-color: rgb(188, 79, 97);
   transition: all ease-in-out 0.5s;
+}
+
+.Header-menu li a svg {
+  float: left;
+  margin-top: 1.2rem;
+}
+
+.item-text {
+  float: left;
+  margin-left: 0.5rem;
 }
