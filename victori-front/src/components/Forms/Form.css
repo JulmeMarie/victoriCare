@@ -1,0 +1,135 @@
+.Form {
+    padding: 1rem;
+    background-color: rgba(225, 220, 220, 0.2) !important;
+}
+
+.Form-main-icon {
+    color: rgb(206, 97, 115);;
+    font-size: 4rem;
+    width: fit-content;
+    margin: auto;
+    border: solid white 0.2rem;
+    border-radius: 50%;
+    width: 8rem;
+    height: 7.7rem;
+    text-align: center;
+    line-height: 8rem;
+    margin-bottom: 1rem;
+    background-color: rgba(233, 214, 214, 0.5);
+}
+
+.form-footer {
+    text-align: right;
+}
+
+.form-title {
+    color: rgb(206, 97, 115);
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+}
+
+.form-title svg {
+    height: 0.8rem;
+    width: 0.8rem;
+}
+
+form label {
+    color: var(--main-color);
+    font-weight: 600;
+    width: 100%;
+    display: block;
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid var(--lightpink-color);
+    border-bottom-color: var(--main-color-700);
+    border-radius: 50%;
+    display: block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.line-input {
+    border-bottom: solid var(--main-color-300) 1px;
+    background-color: var(--lightpink-color);
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-buttons button.active {
+    background-color: var(--main-color);
+    background-color: rgb(206, 97, 115);
+    color: white;
+}
+
+.head-form-button {
+    color: rgb(206, 97, 115);
+    text-align: center;
+    font-size: 1rem;
+    padding: 0.5rem;
+    width: 50%;
+    background-color: white;
+    border: solid rgb(206, 97, 115) 1px;
+    cursor: pointer;
+}
+
+.form-link {
+    width: fit-content;
+    color: rgb(206, 97, 115);
+    text-decoration: underline;
+    cursor: pointer;
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.footer-form-link {
+    width: 100%;
+    text-align: center;
+}
+
+form.hide {
+    display: none;
+}
+
+form.display {
+    display: block;
+}
+
+.input-row {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.input-row svg {
+    position: absolute;
+    right: 0.8rem;
+    top: 0.8rem;
+    color: var(--main-color);
+    color: rgb(206, 97, 115);
+}
+
+
+
+.text-center {
+    text-align: center;
+}

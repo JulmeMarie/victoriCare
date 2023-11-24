@@ -1,0 +1,41 @@
+.ProgressCare {
+    background-color: rgba(249, 192, 192, 0.638);
+    border-radius: 0.3rem;
+    margin-bottom: 0.5rem;
+    position: relative;
+    height: 2rem;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.ProgressCare__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: inherit;
+    line-height: 30px;
+    background-color: transparent;
+    padding-left: 1rem;
+    z-index: 2;
+    color: white;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+.ProgressCare__color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 20%;
+    background-color: var(--care-color);
+    height: inherit;
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+}
+
+.ProgressCare__color.completed {
+    width: 100%;
+    border-radius: 0.3rem;
+}

@@ -1,0 +1,35 @@
+.DragableBox {}
+
+.DragableBox-list {
+    display: block;
+    background-color: #fff;
+    max-height: 15rem;
+    overflow-y: auto;
+    position: relative;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.DragableBox-title {
+    height: 43px;
+    margin: 0;
+    padding-left: 1rem;
+    line-height: 43px;
+}
+
+.DragableBox-item {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: solid rgb(245, 237, 237) 0.01rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.3rem;
+    cursor: move;
+}
+
+.DragableBox-item.dragging :where(.DragableBox-item__value, i) {
+    opacity: 0;
+}

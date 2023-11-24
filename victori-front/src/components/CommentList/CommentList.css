@@ -1,0 +1,102 @@
+.CommentList {
+    width: 80%;
+    position: relative;
+    overflow: hidden;
+    height: 35rem;
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+.CommentList .main-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.comments-wrapper {
+    width: 600%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    transition: all 1s ease-in-out;
+}
+
+.CommentList .direction {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.CommentList .next {
+    right: 0;
+}
+
+.prev svg,
+.next svg {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+}
+
+@keyframes changein {
+    0% {
+        transform: translateX(0);
+    }
+
+    4% {
+        transform: translateX(0);
+    }
+
+    5% {
+        transform: translateX(-16.66%);
+    }
+
+    23% {
+        transform: translateX(-16.66%);
+    }
+
+    24% {
+        transform: translateX(-33.32%);
+    }
+
+    44% {
+        transform: translateX(-33.32%);
+    }
+
+    45% {
+        transform: translateX(-49.98%);
+    }
+
+    65% {
+        transform: translateX(-49.98%);
+    }
+
+    66% {
+        transform: translateX(-66.64%);
+    }
+
+    86% {
+        transform: translateX(-66.64%);
+    }
+
+    87% {
+        transform: translateX(-83.3%);
+    }
+
+    100% {
+        transform: translateX(-83.3%);
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .prev svg,
+    .next svg {
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 0.3rem;
+    }
+}

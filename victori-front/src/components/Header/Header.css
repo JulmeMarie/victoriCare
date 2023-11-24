@@ -1,0 +1,243 @@
+.Header {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  background-position: center;
+  background-size: 100%;
+  color: white;
+  display: block;
+  text-align: center;
+  z-index: 500;
+  box-sizing: border-box;
+}
+
+.Header nav {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  justify-content: space-between;
+  height: 3.5rem;
+  background: var(--main-color);
+  position: relative;
+  box-sizing: border-box;
+}
+
+.Header .Header__main-content {
+  width: 100%;
+  position: absolute;
+  background-color: rgb(249, 171, 183);
+  box-sizing: border-box;
+}
+
+.Header__action-buttons {
+  width: 40%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Header__action-buttons button {
+  border: 0;
+  width: 50%;
+  height: 50%;
+  font-size: 0.9rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  color: white;
+  transition: all 0.5s ease-in-out;
+  border-radius: 0;
+  position: relative;
+}
+
+.Header__action-buttons button:hover {
+  font-size: 1rem;
+  transition: all 0.5s ease-in-out;
+  border: solid rgba(249, 192, 192, 0.64) 0.01rem;
+  color: white;
+}
+
+.action-button__icon {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.create-event-button {
+  background-color: var(--event-color);
+}
+
+.create-care-button {
+  background-color: var(--care-color);
+}
+
+.create-access-button {
+  background-color: var(--access-color);
+}
+
+.suggest-firstname-button {
+  background-color: var(--firstname-color);
+}
+
+.Header .main-content__wrapper {
+  position: relative;
+  width: 80%;
+  height: inherit;
+  margin: auto;
+  margin-top: 3rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgb(206, 97, 115);
+  background-image: url('../../../public/bg.png'), url('../../../public/logo-t.png');
+  background-repeat: no-repeat;
+  background-position: right 20em bottom 1%, right 1rem bottom 1%;
+  background-size: contain;
+}
+
+.wrapper-logo {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5%;
+}
+
+.Header .Header-logo-image {
+  height: 3rem;
+  width: 3rem;
+  margin: 0.3rem;
+  background-image: url('../../../public/logo192.png');
+  background-position: center;
+  background-size: cover;
+  display: block;
+}
+
+.Header .Header-logo-name {
+  height: 1.4rem;
+  width: 7rem;
+  margin: 0.3rem;
+  margin-top: 0.8rem;
+}
+
+.Header-menu {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  font-family: var(--title-font-family);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-transform: capitalize;
+  position: relative;
+  margin-right: 5%;
+  z-index: 2;
+  font-weight: 100;
+}
+
+.Header-menu li {
+  list-style: none;
+  line-height: 3.5rem;
+  background-color: var(--main-color);
+  height: 100%;
+  transition: all ease-in-out 0.5s;
+  box-sizing: border-box;
+}
+
+.Header-menu>li {
+  text-transform: capitalize;
+}
+
+.Header-menu>li>a {
+  display: block;
+  height: 100%;
+  color: pink;
+  font-weight: bolder;
+  box-sizing: border-box;
+  text-decoration: none;
+  transition: all ease-in-out 0.5s;
+}
+
+.Header-menu li a {
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+.Header-menu li.active a,
+.Header-menu li:hover a {
+  color: white;
+}
+
+.Header-menu>li.active,
+.Header-menu>li:hover {
+  background-color: rgb(188, 79, 97);
+  transition: all ease-in-out 0.5s;
+}
+
+.Header-menu li a svg {
+  float: left;
+  margin-top: 1.2rem;
+}
+
+.item-text {
+  float: left;
+  margin-left: 0.5rem;
+}
+
+.sidenav-toggle {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  cursor: pointer;
+}
+
+.Header-menu__mobile {
+  display: none;
+}
+
+.Header-menu__computer {
+  display: flex;
+}
+
+.Header-menu__computer .Language ul {
+  position: absolute;
+  left: 0;
+}
+
+.Header-menu__computer .Language>div {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  text-align: left;
+  border-left: solid white 1px;
+}
+
+@media screen and (max-width: 480px) {
+  .Header-menu__computer {
+    display: none;
+  }
+
+  .Header .main-content__wrapper {
+    width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+    background-image: url('../../../public/bg.png');
+    background-position: left 1em top 0;
+  }
+
+  .Header-menu__mobile {
+    display: block;
+    margin-right: 0;
+  }
+
+  .Header-menu__mobile li {
+    line-height: 4rem;
+  }
+
+  .Header-menu__mobile li svg {
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .Header__action-buttons {
+    width: 100%;
+  }
+}

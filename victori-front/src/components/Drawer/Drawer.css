@@ -1,0 +1,95 @@
+.Drawer {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: rgba(17, 17, 17, 0.351);
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.Drawer__header {
+    position: relative;
+    height: 3.5rem;
+    background-color: var(--main-color);
+    padding-top: 0.8rem;
+    box-sizing: border-box;
+}
+
+.Drawer-menu {
+    width: 100%;
+    color: var(--main-color);
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+.Drawer-menu>li {
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 0.1rem;
+    background-color: rgb(252, 215, 222, 0.2);
+    border-radius: 0.1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.Drawer-menu .Language ul {
+    margin-top: 1.5rem;
+    width: 100%;
+}
+
+.Drawer-header__logo-name {
+    height: 1.8rem;
+    width: 10rem;
+}
+
+.Drawer.close {
+    display: none;
+}
+
+.Drawer__content {
+    width: 30%;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    transition: 0.5s;
+    box-sizing: border-box;
+    animation: translate 0.3s ease-in-out;
+    background-color: white;
+}
+
+.Drawer__close {
+    color: white;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1002;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+@keyframes translate {
+    from {
+        right: -75%;
+    }
+
+    to {
+        right: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .Drawer__content {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .Drawer__content {
+        width: 75%;
+    }
+}

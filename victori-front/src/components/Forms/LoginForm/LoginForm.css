@@ -1,0 +1,13 @@
+@import url('../Form.css');
+.LoginForm {}
+
+.form-button {
+    cursor: pointer;
+}
+
+.form-button button {
+    background-color: rgb(206, 97, 115);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: 0;
+}

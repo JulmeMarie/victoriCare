@@ -1,0 +1,26 @@
+.Sidebar {
+    width: 25rem;
+    margin-left: 1rem;
+    margin-top: 3rem;
+}
+
+/*
+.IndentificationForms {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 1rem 2rem;
+    margin-top: 1rem;
+    background-color: rgba(225, 220, 220, 0.2) !important;
+}
+
+.form-menu {
+    height: 2rem;
+    border-bottom: solid white 1px;
+}
+
+@media screen and (max-width: 480px) {
+    .Sidebar {
+        width: 100%;
+        order: 0;
+    }
+}*/

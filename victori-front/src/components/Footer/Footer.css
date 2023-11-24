@@ -1,0 +1,33 @@
+.Footer {
+  width: 100%;
+  color: white;
+  text-align: center;
+  box-sizing: border-box;
+  justify-content: center;
+}
+
+.Footer-top {
+  background-color: rgb(206, 97, 115);
+}
+
+.Footer-top .Form {
+  width: 30rem;
+}
+.Footer-bottom {
+   padding: 1rem;
+   background: var(--main-color);
+}
+
+.Footer-menu {
+   margin: auto;
+   width: fit-content;
+}
+
+.Footer-menu li {
+  margin-left: 2rem;
+  list-style: none;
+}
+
+.Footer-menu li a {
+  color: white !important;
+}

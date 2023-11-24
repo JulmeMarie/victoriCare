@@ -1,0 +1,23 @@
+.ServiceList {
+    width: 100%;
+    background-color: var(--main-color-100);
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.ServiceList-wrapper {
+    width: 100%;
+    justify-content: space-between;
+}
+
+.ServiceList .main-title {
+    text-align: center;
+    padding-top: 2rem;
+}
+
+
+.ServiceList hr {
+    border: solid var(--main-color-100) 0.01rem;
+    margin-bottom: 3rem;
+    width: 50%;
+}

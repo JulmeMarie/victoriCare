@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:remove="all">Template for HTML sign up mail</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <div th:switch="${subject}">
+           <div th:case="'code'">
+               <p>
+              		Bonjour <span th:text="${pseudo}">,
+               </p>
+                <p>
+		            Voici le code de validation de votre inscription à <b>VictoriCare : </b><br/> 
+					<div style="padding: 1rem; box-sizing: border-box; background-color: rgb(177, 230, 212); color: black; text-align: center;">
+						<div style="font-size: smaller;">Code de vérification : </div>
+						<div th:text="${code}" style="font-weight: bolder;"></div>
+						<div style="font-size: x-small;">(Ce code expire dans <span th:text="${timeout}"> </span> minutes) </div>
+					</div>
+		            <div>Date d'inscription : <span th:text="${#dates.format(creationDate, 'dd-MM-yyyy HH:mm:ss')}">19-02/2023</span>.</div>
+		        </p>
+		        <p>
+		        	Vous pouvez alternativement valider votre inscription en cliquant sur :  
+		        	<a th:href="@{${frontEndURL} + 'sign-up/code-form/' + ${code} + '/' + ${id}}">Je valide mon compte</a>
+		        </p>
+				<p>
+					<div>L'équipe VictoriCare vous remerci de votre inscription.</div>
+					<div>A tout de suite sur <a th:href="@{${frontEndURL}}">VictoriCare</a></div>
+				</p>
+           </div>
+           <div th:case="'confirmation'">
+               <p>
+	              Bonjour <span th:text="${pseudo}"> </span>,
+	            </p>
+	             <p>
+		            Nous avons le plaisir de vous annoncer que votre nouveau membre a bien été enregistré sur le site <b>FMC Haïti</b>.<br/>
+		            <div>Nom : <span th:text="${userLastname}">nom de l'utilisateur</span></div>
+		            <div>Prénom : <span th:text="${userFirstname}">prénom de l'utilisateur</span></div><br/>
+		            <div>Date de création du compte : <span th:text="${#dates.format(userCreateAt, 'dd-MM-yyyy')}">19-02/2023</span>.</div>
+		        </p>
+		        <p> 
+		        	Un e-mail a été envoyé à votre invité. En cas de non reception, vous povez refaire la demande après 48h sur le site
+		        	<a th:href="@{${frontEndURL}}">FMC Haïti</a>
+				</p>
+	        </div>
+        </div>
+        
+         <p>
+	         <br/>Cordialement, <br/><br/>
+	            <em>Association FMC Haïti</em>
+        </p>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:remove="all">Template for HTML email</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <p>
+            Bonjour <span th:text="${userFirstname}"> </span> 
+            <span th:text="${userLastname}"> </span>,
+        </p>
+        <p>
+            Nous avons le plaisir que vous annoncer que votre demande de <span th:text="${subject}">sujet</span> a bien été prise en compte. <br/>
+         </p>
+        <p th:if="${userCode == null}">
+        	Veuillez vous connecter sur votre ancienne adresse e-mail afin de récupérer le code vous permettant de valider cette opération. 
+        </p>
+        <p th:if="${userCode != null}">
+        	Voici le code de validation de cette opération : <b><span th:text="${userCode}"><span></b><br/>
+        </p>
+        <p th:if="${userCode != null}">
+        	Vous pouvez aussi valider l'opération en cliquant sur :  <a th:href="@{${frontEndURL} + 'code/' + ${userCode} + '/' + ${type} + '/' + ${userId}}"><b>Je valide mon opération<b/></a>
+        </p>
+         <p>
+         	Date de création de la demande : <span th:text="${#dates.format(userCodeAt, 'dd-MM-yyyy')}">19-02/2023</span>
+         </p>
+        <p>
+         <br/>
+         	Cordialement, 
+         	<br/>
+         	<br/>
+            <em>Association FMC Haïti</em>
+        </p>
+    </body>
+</html>

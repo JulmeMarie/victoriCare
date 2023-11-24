@@ -1,0 +1,56 @@
+.Row {}
+
+tbody tr:nth-child(2n) {
+    background-color: #f9f9f9;
+}
+
+.Table tbody tr:hover {
+    background-color: #f6f6f6;
+}
+
+.more-details-ul {
+    width: fit-content;
+    background-color: white;
+    border-radius: 0.2rem;
+    padding: 1rem;
+}
+
+.more-details-ul li {
+    list-style: none;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    color: rgb(101, 94, 94);
+}
+
+.more-details-li__icon {
+    font-size: 0.8rem;
+}
+
+.td-checkbox {
+    width: 50px;
+}
+
+.show-details-box {
+    width: 50px;
+}
+
+.inner-table {
+    font-size: 0.9rem;
+    margin-left: -0.5rem;
+}
+
+.inner-table th,
+.inner-table td {
+    padding: 0.2rem 0.5rem;
+}
+
+.inner-table th {
+    background-color: white;
+    text-align: left;
+    border-top: solid #f6f6f6 0.01rem;
+}
+
+.inner-table td {
+    border-top: solid #f6f6f6 0.01rem;
+    background-color: white;
+}

@@ -1,0 +1,149 @@
+{
+    "translations": {
+        "headerTitle": "{{appName}} est une application de soins de l'année {{year}}",
+        "lang": {
+            "en": "Anglais",
+            "fr": "Français",
+            "ht": "Créole Haïtien",
+            "es": "Espagnol"
+        },
+        "menu": {
+            "home": "accueil",
+            "events": "événements",
+            "babycare": "soins bébé",
+            "notifications": "Notifications",
+            "about": "A propos",
+            "contactUs": "Contactez-nous"
+        },
+        "login": {
+            "yourAccount": "Votre compte",
+            "babySitter": "Baby-sitter",
+            "email": "E-mail",
+            "password": "Mot de passe",
+            "typeLastname": "Saisir votre nom de famille",
+            "typePassword": "Saisir votre mot de passe",
+            "passwordForgotten": "Mot de passe oublié",
+            "connect": "Se connecter",
+            "yourLastname": "Votre nom",
+            "associatedLastname": "Nom associé au compte",
+            "accessCode": "Code d'accès",
+            "typeAssociatedLastname": "Saisir nom de famille du compte",
+            "typeAccessCode": "Saisir le code d'accès",
+            "typeEmail": "Saisir votre adresse e-mail",
+            "send": "Envoyer",
+            "authentication": "authentification",
+            "babysitter": "Baby-sitter",
+            "parent": "Parent",
+            "clickHere": "cliquez ici",
+            "noaccount": "Pas de compte, Inscrivez-vous"
+        },
+        "signin": {
+            "register": "Inscription",
+            "email": "E-mail",
+            "password1": " Mot de passe",
+            "password2": "Mot de passe",
+            "typeEmail": "Saisir votre adresse e-mail",
+            "typePassword1": "Créer votre mot de passe",
+            "checkPassword2": "Confirmer votre mot de passe",
+            "validate": "S'inscrire",
+            "havingaccount": "J'ai un compte, je me connecte."
+        },
+        "recovery": {
+            "title": "Récupération",
+            "send": "envoyer"
+        },
+        "code": {
+            "title": "Code",
+            "typeCode": "Saisir le code reçu",
+            "send": "envoyer"
+        },
+        "password": {
+            "title": "Mot de passe",
+            "send": "Mettre à jour"
+        },
+        "contact": {
+            "joining": "Contactez-nous",
+            "email": "E-mail",
+            "name": "Nom",
+            "typeEmail": "Saisir votre adresse e-mail",
+            "username": "Saissir votre non",
+            "subject": "Sujet",
+            "accountProblem": "Problème avec mon compte",
+            "accountQuestion": "Question à propos de mon compte",
+            "connectionFailed": "Echec de connexion",
+            "suggestion": "Une suggestion ou une remarque ?",
+            "others": "Autres",
+            "message": "Message",
+            "messageFields": "Bonjour, je vous contacte car....",
+            "send": "Envoyer mon message"
+        },
+        "carousel": [
+            {
+                "title1": "Gestion De l'arivée",
+                "title2": "de votre bébé",
+                "description": "Vous pouvez d'ores et déjà réfléchir à des prénoms pour votre petit protégé. Il est également temps de réaliser votre entretien prénatal précoce avec votre médecin ou votre sage-femme."
+            },
+            {
+                "title1": "Gestion des soins",
+                "title2": "pour votre bébé",
+                "description": "dadzdddddddddddddddd"
+            },
+            {
+                "title1": "Gestion des événements",
+                "title2": "Pour vos enfants et vous",
+                "description": "dzdzdddddddddddddddddddddddddddddd"
+            },
+            {
+                "title1": "Gestion De l'arivée",
+                "title2": "de votre bébé",
+                "description": "Vous pouvez d'ores et déjà réfléchir à des prénoms pour votre petit protégé. Il est également temps de réaliser votre entretien prénatal précoce avec votre médecin ou votre sage-femme."
+            }
+        ],
+        "Help": {
+            "title": "COMMENT VICTORICARE VOUS AIDE ?",
+            "contents": [
+                {
+                    "text": "Vous qui attendez un bébé, VicoriCare est le meilleur endroit pour vous aider à organiser l'arrivée de votre bébé notamment dans le choix du prénom, des événements qui précèdent l'arrive du bébé tels que le baby shower, les visites, etc...",
+                    "image": "/img/new-born.jpg"
+                },
+                {
+                    "text": "Vous qui etes parents, VictoriCare connaît vos inquiétudes quand vous confiez votre enfant à une tierce personne, ne serait-ce pour une jornée. C'est ppour cela, l'équipe VictoriCare tient à vous offrir cet outil vous permettant de suivre en temps réel les différents soins appliqués à votre enfant.",
+                    "image": "/img/parent.jpg"
+                },
+                {
+                    "text": "Vous qui organisez des événements socio-culturels où l'envoi d'une invitation est nécessaire et qu'une confrmation est requise, vous êtes au bon endroit. VictoriCare vous permet de gérer une de participants à un événément que vous organisez.",
+                    "image": "/img/event.jpg"
+                }
+            ]
+        },
+        "victoriService": {
+            "title": "CE QUE NOUS OFFRONS",
+            "contents": [
+                {
+                    "title": "Arrivée du bébé",
+                    "paragraphs": [
+                        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore distinctio fuga numquam delectus nisi atque at ea excepturi inventore beatae doloremque corporis alias, nihil omnis, est nulla iste blanditiis aspernatur.",
+                        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore distinctio fuga numquam delectus nisi atque at ea excepturi inventore beatae doloremque corporis alias, nihil omnis, est nulla iste blanditiis aspernatur."
+                    ],
+                    "icon": "FaBaby"
+                },
+                {
+                    "title": "Se faire garder son enfant",
+                    "paragraphs": [
+                        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore distinctio fuga numquam delectus nisi atque at ea excepturi inventore beatae doloremque corporis alias, nihil omnis, est nulla iste blanditiis aspernatur."
+                    ],
+                    "icon": "FaChild"
+                },
+                {
+                    "title": "Organiser des événéments",
+                    "paragraphs": [
+                        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore distinctio fuga numquam delectus nisi atque at ea excepturi inventore beatae doloremque corporis alias, nihil omnis, est nulla iste blanditiis aspernatur.",
+                        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore distinctio fuga numquam delectus nisi atque at ea excepturi inventore beatae doloremque corporis alias, nihil omnis, est nulla iste blanditiis aspernatur.",
+                        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore distinctio fuga numquam delectus nisi atque at ea excepturi inventore beatae doloremque corporis alias, nihil omnis, est nulla iste blanditiis aspernatur."
+                    ],
+                    "icon": "FaBirthdayCake"
+                }
+            ]
+        }
+    }
+}

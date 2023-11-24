@@ -1,0 +1,74 @@
+.Modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(59, 50, 50, 0.5);
+    z-index: 1000;
+}
+
+.Modal .Form {
+    width: 30rem;
+}
+
+.Modal-content {
+    animation:forwards animateOpen 1s;
+    opacity: 0;
+    z-index: 1001;
+    position: fixed;
+    width: fit-content;
+    left: 50%;
+    top:25%;
+    transform: translate(-50%, -25%);
+    background-color: white;
+    padding: 1rem;
+}
+
+.Modal-content.close {
+    animation:forwards animateClose 1s;
+}
+
+.Modal-close {
+    z-index: 1002;
+    position: fixed;
+    right: 1.5rem;
+    top: 1.5rem;
+    font-size: 1rem;
+    color: rgba(233, 214, 214);
+    width: fit-content;
+    cursor: pointer;
+}
+
+.Modal-close:hover {
+    color: rgb(206, 97, 115);
+}
+
+@keyframes animateClose {
+    from {
+      opacity: 1;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  
+    to {
+      opacity: 0;
+      top: 75%;
+      transform: translate(-50%, -75%);
+    }
+  }
+
+@keyframes animateOpen {
+    from {
+      opacity: 0;
+      top: 25%;
+      transform: translate(-50%, -25%);
+    }
+  
+    to {
+      opacity: 1;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }

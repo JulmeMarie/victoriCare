@@ -1,0 +1,65 @@
+.DataTable {
+    width: 100%;
+    margin: auto;
+}
+
+.DataTable-wrapper {
+    overflow-x: auto;
+    width: 100%;
+}
+
+.DataTable_filter {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 0.5rem;
+}
+
+.Datatable__title {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.waiting-message {
+    text-align: center;
+    padding: 1rem;
+}
+
+.vertical-scroll-bar.xs::-webkit-scrollbar {
+    width: 0.3em;
+    position: absolute;
+    right: 0;
+}
+
+.vertical-scroll-bar.xm::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.vertical-scroll-bar.xl::-webkit-scrollbar {
+    width: 1em;
+}
+
+.horizontal-scroll-bar.xs::-webkit-scrollbar {
+    height: 0.3em;
+}
+
+.horizontal-scroll-bar.xm::-webkit-scrollbar {
+    height: 0.5em;
+}
+
+.horizontal-scroll-bar.xl::-webkit-scrollbar {
+    height: 1em;
+}
+
+.custom-scroll-bar::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.3);
+    border-radius: 1rem;
+}
+
+.custom-scroll-bar::-webkit-scrollbar-thumb {
+    background-color: rgb(178, 171, 171);
+    border-radius: 1rem;
+}

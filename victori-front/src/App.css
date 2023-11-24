@@ -1,0 +1,66 @@
+.App {
+  position: relative;
+}
+
+.main-page {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  color: var(--main-text-color);
+  box-sizing: border-box;
+}
+
+.logo-name {
+  margin: auto;
+  background-image: url('/public/logo-name.png');
+  background-position: center;
+  background-size: cover;
+  display: block;
+}
+
+div.First-content__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.IndexView article.left-main-content {
+  padding-top: 4rem;
+}
+
+.HomeView article.left-main-content {
+  padding-top: 1rem;
+}
+
+article.left-main-content {
+  box-sizing: border-box;
+  width: 68%;
+}
+
+.fa-icon {
+  margin-top: 0.15rem;
+}
+
+.menu-text {
+  margin-left: 0.5rem;
+}
+
+@media screen and (max-width: 480px) {
+  .main-page {
+    width: 100%;
+    margin: 0;
+  }
+
+  div.First-content__container {
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  article.left-main-content {
+    width: 100%;
+    order: 1;
+  }
+}

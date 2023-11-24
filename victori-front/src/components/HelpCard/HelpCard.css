@@ -1,0 +1,32 @@
+.HelpCard {
+    background-color: rgba(231, 218, 218, 0.2);
+    margin-bottom: 2rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 12rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem rgba(107, 104, 104, 0.2);
+    animation: forwards animateHelp 1s;
+}
+
+.HelpCard figure {
+    height: 100%;
+}
+
+.HelpCard figure img{
+    height: 100%;
+    border-radius: 0.3rem;
+}
+
+@keyframes animateHelp {
+    from {
+      opacity: 0;
+      margin-top: 1rem;
+    }
+  
+    to {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+

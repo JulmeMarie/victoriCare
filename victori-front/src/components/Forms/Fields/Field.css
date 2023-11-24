@@ -1,0 +1,31 @@
+input[type='text'],
+input[type='password'],
+input[type='email'],
+input[type='number'],
+textarea,
+select,
+option {
+    border: 0;
+    outline: 0;
+    padding: 0.8rem;
+    padding-right: 2rem;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+input[type='text']:focus,
+input[type='password']:focus,
+input[type='email']:focus,
+input[type='number']:focus,
+textarea:focus {
+    border: solid var(--main-color-300) 0.01rem;
+    background-color: white;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.round-corner-input {
+    border-radius: 0.2rem;
+}

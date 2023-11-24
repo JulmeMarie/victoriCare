@@ -1,0 +1,40 @@
+@import url('../Form.css');
+
+.ContactForm {
+    margin: auto;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.ContactForm .form-title {
+    background-color: white;
+    width: fit-content;
+    margin: auto;
+    padding: 0.5rem 1rem;
+    border-radius: 0.3rem;
+    background-color: var(--pink-color);
+}
+
+.contacMmessageWrapper {
+    background-color: white;
+    color: black;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    text-align: justify;
+}
+
+.contacMmessageWrapper span.span-username {
+    color: var(--main-color);
+    font-weight: bolder;
+}
+
+.contacMmessageWrapper span.span-message {
+   font-size: small;
+   font-style: italic;
+}
+
+.contactConsigneWrapper {
+    text-align: left;
+    padding: 1rem 1rem 0 1rem;
+    font-weight: bold;
+}

@@ -1,0 +1,15 @@
+.HelpList {
+    flex: 1;
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 2rem;
+}
+
+.HelpList .Help:nth-child(2n+1) figure {
+    order: 1;
+    margin-right: 1rem;
+}
+.HelpList .Help:nth-child(2n+1) p {
+    order: 2;
+    margin-left: 1rem;
+}

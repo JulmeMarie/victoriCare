@@ -1,0 +1,68 @@
+.ServiceCard {
+    flex: 1;
+    height: fit-content;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    animation: backwards animateService 1s;
+}
+
+.ServiceCard-wrapper {
+    padding: 1rem;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 0.5rem;
+    margin-left: 2.5rem;
+}
+
+.ServiceCard-icon {
+    background-color: rgb(242, 224, 224);
+    height: 5rem;
+    width: 5rem;
+    float: left;
+    border-radius: 50%;
+    border: solid white 0.5rem;
+}
+
+.ServiceCard-icon svg {
+    width: 2rem;
+    height: 2rem;
+    margin: auto;
+    display: block;
+    margin-top: 1rem;
+    color: var(--main-color-800);
+}
+
+.ServiceCard-paragraph {
+    text-align: justify;
+    margin-bottom: 1rem;
+}
+
+.ServiceCard-title {
+    color: var(--main-color-800);
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+@media screen and (max-width: 480px) {
+
+    .ServiceCard {
+        width: 100%;
+    }
+
+    .ServiceCard-title {
+        font-size: 1rem;
+    }
+}
+
+@keyframes animateService {
+    from {
+      opacity: 0;
+      margin-top: 1rem;
+    }
+  
+    to {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
