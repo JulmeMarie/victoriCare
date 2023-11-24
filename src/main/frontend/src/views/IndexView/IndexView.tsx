@@ -1,6 +1,8 @@
 import { FC, ReactNode } from 'react';
-import { FaBaby, FaBirthdayCake, FaChild } from 'react-icons/fa';
+import { FaBaby, FaBirthdayCake, FaChild, FaAngleLeft, FaAngleRight, FaQuoteLeft } from 'react-icons/fa';
 import { useOutlet } from 'react-router-dom';
+import CommentContainer from '../../components/CommentContainer/CommentContainer';
+import ContactForm from '../../components/Forms/ContactForm/ContactForm';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import Sidebar from '../../components/Sidebar/Sidebar';
 import './IndexView.css';
@@ -54,12 +56,12 @@ const IndexView: FC<IndexViewProps> = () => {
       <div className='First-content__container'>
         {
           outlet ||
-          <article className='Catch-sentence__box'>
-            <h1 className='title Catch-sentence__title'>COMMENT VICTORICARE VOUS AIDE ? </h1>
+          <article className='Introduction-sentence__box'>
+            <h1 className='title Introduction-sentence__title'>COMMENT VICTORICARE VOUS AIDE ? </h1>
             {catchSetences.map((sentence, index) =>
-              <section className='Catch-sentence__description' key={index}>
+              <section className='Introduction-sentence__description' key={index}>
                 <p>{sentence.description}</p>
-                <figure className='Catch-sentence__image'>
+                <figure className='Introduction-sentence__image'>
                   <img src={process.env.PUBLIC_URL + sentence.img} alt={sentence.img} />
                 </figure>
               </section>
@@ -69,7 +71,16 @@ const IndexView: FC<IndexViewProps> = () => {
         <Sidebar />
       </div>
       <article className='Second-content__container'>
-        {servicesTab.map((serv, index) => <ServiceCard key={index} service={serv} />)}
+        <h1 className='title Second-content__title'>CE QUE NOUS OFFRONS </h1>
+        <div className='Second-content__cards'>
+          {servicesTab.map((serv, index) => <ServiceCard key={index} service={serv} />)}
+        </div>
+      </article>
+      <article className='Third-content__container'>
+        <CommentContainer />
+      </article>
+      <article className='Forth-content__container' id="contact-form">
+        <ContactForm />
       </article>
     </main>
   );

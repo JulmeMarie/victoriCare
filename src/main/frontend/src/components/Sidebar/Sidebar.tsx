@@ -2,8 +2,7 @@ import React, { FC, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import i18n from '../../utils/languages/I18N';
-import LoginAccessForm from '../Forms/LoginAccessForm/LoginAccessForm';
-import LoginOwnerForm from '../Forms/LoginOwnerForm/LoginOwnerForm';
+import LoginForm from '../Forms/LoginForm/LoginForm';
 import RecoveryForm from '../Forms/RecoveryForm/RecoveryForm';
 import SignInForm from '../Forms/SignInForm/SignInForm';
 import Tooltip from '../Tooltip/Tooltip';
@@ -14,19 +13,17 @@ interface SidebarProps {
 }
 
 const formIds = {
-  "owner": "login-owner-form",
-  "access": "login-access-form",
+  "login": "login-form",
   "recovery": "login-recovery-form",
   "signin": "signin-form"
 }
 
 const Sidebar: FC<SidebarProps> = () => {
-  const [formId, setFormId] = useState<string>(formIds.owner);
+  const [formId, setFormId] = useState<string>(formIds.login);
   return (
     <aside className="Sidebar">
       <section className="IndentificationForms">
-        {formId === formIds.owner && <LoginOwnerForm setFormId={setFormId} />}
-        {formId === formIds.access && <LoginAccessForm setFormId={setFormId} />}
+        {formId === formIds.login && <LoginForm setFormId={setFormId} />}
         {formId === formIds.recovery && <RecoveryForm setFormId={setFormId} />}
         {formId === formIds.signin && <SignInForm setFormId={setFormId} />}
       </section>

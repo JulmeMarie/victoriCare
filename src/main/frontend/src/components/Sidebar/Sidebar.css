@@ -36,25 +36,3 @@
     height: 2rem;
     border-bottom: solid white 1px;
 }
-
-.form-link {
-    width: fit-content;
-    color: var(--main-color);
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.head-form-link {
-    color: rgb(149, 221, 46);
-    text-align: center;
-    width: 100%;
-    font-weight: 600;
-}
-
-form.hide {
-    display: none;
-}
-
-form.display {
-    display: block;
-}

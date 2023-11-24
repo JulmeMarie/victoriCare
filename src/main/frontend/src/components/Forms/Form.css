@@ -7,7 +7,7 @@
 .form-title {
     color: var(--main-color);
     text-align: center;
-    font-family: var(--title-font-family);
+    /*font-family: var(--title-font-family);*/
     text-transform: uppercase;
     margin-bottom: 1.5rem;
     font-size: 1rem;
@@ -16,6 +16,8 @@
 form label {
     color: var(--main-color);
     font-weight: 600;
+    width: 100%;
+    display: block;
 }
 
 *:disabled {
@@ -51,19 +53,24 @@ form label {
 form input[type='text'],
 form input[type='password'],
 form input[type='email'],
-form input[type='number'] {
+form input[type='number'],
+textarea,
+select,
+option {
     border: 0;
     border-bottom: solid var(--main-color) 1px;
     outline: 0;
     background-color: var(--lightpink-color);
-    padding: 0.5rem 1rem 0.5rem 1rem;
+    padding: 0.5rem;
     box-sizing: border-box;
+    width: 100%;
 }
 
 form input[type='text']:focus,
 form input[type='password']:focus,
 form input[type='email']:focus,
-form input[type='number']:focus {
+form input[type='number']:focus,
+textarea:focus {
     border-bottom: solid var(--main-color) 2px;
     background-color: white;
 }
@@ -71,8 +78,39 @@ form input[type='number']:focus {
 form input[type='submit'] {
     background-color: var(--main-color);
     color: white;
-    padding: 0.5rem;
+    padding: 0.8rem;
     border-radius: 0.3rem;
     border: 0;
     cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+}
+
+
+
+.form-link {
+    width: fit-content;
+    color: var(--main-color);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.footer-form-link {
+    width: 100%;
+    text-align: center;
+}
+
+.head-form-link {
+    color: var(--main-color);
+    text-align: center;
+    width: 100%;
+    font-weight: 600;
+}
+
+form.hide {
+    display: none;
+}
+
+form.display {
+    display: block;
 }

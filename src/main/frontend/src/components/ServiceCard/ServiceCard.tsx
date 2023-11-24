@@ -12,9 +12,9 @@ const ServiceCard: FC<ServiceCardProps> = ({ service }) => (
       {service.icon}
     </div>
     <div className='ServiceCard-content'>
-      <h1 className='title ServiceCard-title'>
+      <h2 className='title ServiceCard-title'>
         {service.title}
-      </h1>
+      </h2>
       {service.paragraphs.map((paragraph, index) => <p key={index} className='ServiceCard-paragraph'>{paragraph}</p>)}
     </div>
     <div className='samTest'>un test imprtant</div>

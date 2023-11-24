@@ -9,18 +9,23 @@
 }
 
 article.Second-content__container {
+    padding-top: 1rem;
+}
+
+div.Second-content__cards {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top: 2rem;
     height: fit-content;
     justify-content: space-between;
+    margin-top: 3rem;
 }
 
-.Catch-sentence__title {
+.Introduction-sentence__title {
     color: var(--main-color-900);
     margin-bottom: 1rem;
     text-align: justify;
+    font-size: 1.5rem;
 }
 
 div.First-content__container {
@@ -29,13 +34,13 @@ div.First-content__container {
     justify-content: space-between;
 }
 
-article.Catch-sentence__box {
+article.Introduction-sentence__box {
     padding-top: 2rem;
     box-sizing: border-box;
     width: 68%;
 }
 
-.Catch-sentence__description {
+.Introduction-sentence__description {
     display: flex;
     flex-direction: row;
     width: 100%;
@@ -43,26 +48,43 @@ article.Catch-sentence__box {
     margin-bottom: 2rem;
 }
 
-.Catch-sentence__description p {
+.Introduction-sentence__description p {
     width: 70%;
     padding: 1rem;
     box-sizing: border-box;
     text-align: justify;
 }
 
-.Catch-sentence__description figure {
+.Introduction-sentence__description figure {
     width: 30%;
 }
 
-.Catch-sentence__description figure img {
+.Introduction-sentence__description figure img {
     width: 100%;
     object-fit: cover;
+    border-radius: 0.5rem;
 }
 
-.Catch-sentence__description:nth-child(2n+1) figure {
+.Introduction-sentence__description:nth-child(2n+1) figure {
     order: 1;
 }
 
-.Catch-sentence__description:nth-child(2n+1) p {
+.Introduction-sentence__description:nth-child(2n+1) p {
     order: 2;
+}
+
+.Second-content__title {
+    color: var(--main-color);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+/*
+.Second-content__title::before,
+.Second-content__title::after {
+    content: '~';
+}*/
+
+.Third-content__container {
+    width: 100%;
 }

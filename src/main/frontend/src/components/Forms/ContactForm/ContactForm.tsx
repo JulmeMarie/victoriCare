@@ -68,38 +68,32 @@ const ContactForm: FC<ContactFormProps> = () => {
             </div>
             <div className='row'>
               <label className='col-100' htmlFor="message"> {i18n.t("contact.subject")}</label>
-              <div className='row'>
-                {/* <label htmlFor="select-form">  {i18n.t("contact.selectForm")}</label> */}
-                <div className='row'>
-                  <select name="sujet" id="sujet" required>
-                    {/* <option
-                      value="input" disabled selected hidden>Choisissez le sujet de votre message</option> */}
-                    <option
-                      value="probleme-compte">{i18n.t("contact.inputSelect1")}  </option>
-                    <option
-                      value="question-connexion"> {i18n.t("contact.inputSelect2")} </option>
-                    <option
-                      value="echec-connexion">{i18n.t("contact.inputSelect3")}  </option>
+              <select name="sujet" id="sujet" required>
+                {/* <option
+                  value="input" disabled selected hidden>Choisissez le sujet de votre message</option> */}
+                <option
+                  value="probleme-compte">{i18n.t("contact.inputSelect1")}  </option>
+                <option
+                  value="question-connexion"> {i18n.t("contact.inputSelect2")} </option>
+                <option
+                  value="echec-connexion">{i18n.t("contact.inputSelect3")}  </option>
 
-                    <option
-                      value="autre">{i18n.t("contact.inputSelect4")} </option>
-                    <option
-                      value="suggestion">{i18n.t("contact.inputSelect5")} </option>
-                  </select>
-                </div>
-
-              </div>
-              <div>
-                <label htmlFor="message-form"> {i18n.t("contact.message")}</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  placeholder={i18n.t("contact.messageFields")}
-                  area-required="true"></textarea>
-              </div>
-
+                <option
+                  value="autre">{i18n.t("contact.inputSelect4")} </option>
+                <option
+                  value="suggestion">{i18n.t("contact.inputSelect5")} </option>
+              </select>
             </div>
-            <div className='col-100' >
+            <div>
+              <label htmlFor="message-form"> {i18n.t("contact.message")}</label>
+              <textarea
+                id="message"
+                name="message"
+                rows={6}
+                placeholder={i18n.t("contact.messageFields")}
+                area-required="true"></textarea>
+            </div>
+            <div className='row form-footer'>
               <input type="submit" value={i18n.t("contact.send")} />
             </div>
           </div>

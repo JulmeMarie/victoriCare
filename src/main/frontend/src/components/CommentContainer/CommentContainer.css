@@ -1,0 +1,163 @@
+.CommentContainer {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    height: 35rem;
+}
+
+.comments-list {
+    width: 600%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: row;
+    transition: all 1s ease-in-out;
+    /*transform: translateX(0);*/
+    /*animation: 60s linear 1s infinite alternate running changein;*/
+}
+
+.CommentContainer .direction {
+    position: absolute;
+    top: 50%;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.CommentContainer .next {
+    right: 0;
+}
+
+.prev svg,
+.next svg {
+    width: 2rem;
+    height: 2rem;
+    background-color: var(--main-color);
+    color: white;
+    border-radius: 0.2rem;
+    padding: 0.5rem;
+}
+
+.comment-item {
+    width: 20%;
+}
+
+.comment-item__photo {
+    width: 100%;
+    height: 14rem;
+    position: relative;
+}
+
+.comment-item_play {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    background-color: var(--main-color);
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.comment-item_play svg {
+    height: 1.5rem;
+    width: 1.5rem;
+    color: white;
+}
+
+.comment-item-play__text {
+    height: 1.5rem;
+    line-height: 1.5rem;
+    padding-left: 0.2rem;
+    text-transform: capitalize;
+    color: white
+}
+
+.comment-item__photo img {
+    height: 100%;
+    margin: auto;
+    display: block;
+    border: dotted var(--main-color) 0.1rem;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.comment-item__username,
+.comment-item__role {
+    text-align: center;
+}
+
+.comment-item__username {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.comment-item__role {
+    color: var(--main-color);
+    font-weight: bolder;
+}
+
+.comment-item__message {
+    text-align: center;
+}
+
+.comment-item_quote {
+    width: 100%;
+}
+
+.comment-item_quote svg {
+    width: 3rem;
+    height: 3rem;
+    margin: auto;
+    display: block;
+    color: var(--main-color);
+}
+
+@keyframes changein {
+    0% {
+        transform: translateX(0);
+    }
+
+    4% {
+        transform: translateX(0);
+    }
+
+    5% {
+        transform: translateX(-16.66%);
+    }
+
+    23% {
+        transform: translateX(-16.66%);
+    }
+
+    24% {
+        transform: translateX(-33.32%);
+    }
+
+    44% {
+        transform: translateX(-33.32%);
+    }
+
+    45% {
+        transform: translateX(-49.98%);
+    }
+
+    65% {
+        transform: translateX(-49.98%);
+    }
+
+    66% {
+        transform: translateX(-66.64%);
+    }
+
+    86% {
+        transform: translateX(-66.64%);
+    }
+
+    87% {
+        transform: translateX(-83.3%);
+    }
+
+    100% {
+        transform: translateX(-83.3%);
+    }
+}
