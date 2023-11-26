@@ -26,15 +26,15 @@
             "yourLastname": "Votre nom",
             "associatedLastname": "Nom associé au compte",
             "accessCode": "Code d'accès",
-            "typeAssociatedLastname": "Saisir le nom de famille associé au compte",
+            "typeAssociatedLastname": "Saisir nom de famille du compte",
             "typeAccessCode": "Saisir le code d'accès",
             "typeEmail": "Saisir votre adresse e-mail",
             "send": "Envoyer",
             "authentication": "authentification",
-            "babysitter": "Si vous êtes baby-sitter, cliquez-ici",
-            "parent": "Si vous êtes parent, cliquez-ici.",
+            "babysitter": "Baby-sitter",
+            "parent": "Parent",
             "clickHere": "cliquez ici",
-            "noaccount": "Pas de compte, isncrivez-vous."
+            "noaccount": "Pas de compte, Inscrivez-vous"
         },
         "signin": {
             "register": "Inscription",

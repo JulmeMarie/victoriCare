@@ -1,6 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
+import { FormType } from '../../utils/Enums';
 import i18n from '../../utils/languages/I18N';
 import LoginForm from '../Forms/LoginForm/LoginForm';
 import RecoveryForm from '../Forms/RecoveryForm/RecoveryForm';
@@ -12,20 +13,14 @@ interface SidebarProps {
 
 }
 
-const formIds = {
-  "login": "login-form",
-  "recovery": "login-recovery-form",
-  "signin": "signin-form"
-}
-
 const Sidebar: FC<SidebarProps> = () => {
-  const [formId, setFormId] = useState<string>(formIds.login);
+  const [formId, setFormId] = useState<string>(FormType.OWNER);
   return (
     <aside className="Sidebar">
       <section className="IndentificationForms">
-        {formId === formIds.login && <LoginForm setFormId={setFormId} />}
-        {formId === formIds.recovery && <RecoveryForm setFormId={setFormId} />}
-        {formId === formIds.signin && <SignInForm setFormId={setFormId} />}
+        {(formId === FormType.OWNER || formId === FormType.ACCESS) && <LoginForm setFormId={setFormId} />}
+        {formId === FormType.RECOVERY && <RecoveryForm setFormId={setFormId} />}
+        {formId === FormType.SIGNIN && <SignInForm setFormId={setFormId} />}
       </section>
     </aside>
   );

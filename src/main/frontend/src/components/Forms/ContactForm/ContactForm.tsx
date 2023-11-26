@@ -94,7 +94,7 @@ const ContactForm: FC<ContactFormProps> = () => {
                 area-required="true"></textarea>
             </div>
             <div className='row form-footer'>
-              <input type="submit" value={i18n.t("contact.send")} />
+              <input type="submit" value={i18n.t("contact.send")} disabled={true} />
             </div>
           </div>
         </form>

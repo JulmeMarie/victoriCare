@@ -97,3 +97,10 @@ export const Direction = Object.freeze({
     LEFT: -1,
     RIGHT: 1
 });
+
+export const FormType = Object.freeze({
+    OWNER: 'login-owner-form',
+    ACCESS: 'login-access-form',
+    RECOVERY: "login-recovery-form",
+    SIGNIN: "signin-form"
+});

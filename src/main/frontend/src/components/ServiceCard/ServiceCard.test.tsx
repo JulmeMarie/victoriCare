@@ -2,12 +2,12 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 import ServiceCard from './ServiceCard';
-import { FaUser } from 'react-icons/fa';
+import { IoPerson } from 'react-icons/io5';
 
 const serviceTest = {
   title: "test",
   paragraphs: [],
-  icon: <FaUser />
+  icon: <IoPerson />
 }
 
 describe('<ServiceCard />', () => {

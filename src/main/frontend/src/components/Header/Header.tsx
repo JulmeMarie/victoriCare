@@ -26,7 +26,7 @@ const Header: FC<HeaderProps> = ({ user }) => {
                 <ul className="Header-menu">
                     <li className='active'><Link to="/"><IoHomeSharp className='item-icon' /> <div className='item-text'>{i18n.t("menu.home")} </div></Link> </li>
                     <li><Link to="/cares/current"><IoInformationCircle /> {i18n.t("menu.about")}</Link> </li>
-                    <li><a href="#contact-form"><IoMailSharp /> {i18n.t("menu.contactUs")}</a> </li>
+                    <li><Link to="#contact-form"><IoMailSharp /> {i18n.t("menu.contactUs")}</Link> </li>
                     <li><Language /></li>
                 </ul>
             );
