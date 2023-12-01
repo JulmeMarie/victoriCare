@@ -1,0 +1,80 @@
+{
+    "translations": {
+        "headerTitle": "{{appName}} est une application de soins de l'année {{year}}",
+        "lang": {
+            "en": "Anglais",
+            "fr": "Français",
+            "ht": "Créole Haïtien",
+            "es": "Espagnol"
+        },
+        "menu": {
+            "home": "accueil",
+            "events": "événements",
+            "babycare": "soins bébé",
+            "about": "A propos",
+            "contactUs": "Contactez-nous"
+        },
+        "login": {
+            "yourAccount": "Votre compte",
+            "babySitter": "Baby-sitter",
+            "email": "E-mail",
+            "password": "Mot de passe",
+            "typeLastname": "Saisir votre nom de famille",
+            "typePassword": "Saisir votre mot de passe",
+            "passwordForgotten": "Mot de passe oublié",
+            "connect": "Se connecter",
+            "yourLastname": "Votre nom",
+            "associatedLastname": "Nom associé au compte",
+            "accessCode": "Code d'accès",
+            "typeAssociatedLastname": "Saisir nom de famille du compte",
+            "typeAccessCode": "Saisir le code d'accès",
+            "typeEmail": "Saisir votre adresse e-mail",
+            "send": "Envoyer",
+            "authentication": "authentification",
+            "babysitter": "Baby-sitter",
+            "parent": "Parent",
+            "clickHere": "cliquez ici",
+            "noaccount": "Pas de compte, Inscrivez-vous"
+        },
+        "signin": {
+            "register": "Inscription",
+            "email": "E-mail",
+            "password1": " Mot de passe",
+            "password2": "Mot de passe",
+            "typeEmail": "Saisir votre adresse e-mail",
+            "typePassword1": "Créer votre mot de passe",
+            "checkPassword2": "Confirmer votre mot de passe",
+            "validate": "S'inscrire",
+            "havingaccount": "J'ai un compte, je me connecte."
+        },
+        "recovery": {
+            "title": "Récupération",
+            "send": "envoyer"
+        },
+        "code": {
+            "title": "Code",
+            "typeCode": "Saisir le code reçu",
+            "send": "envoyer"
+        },
+        "password": {
+            "title": "Mot de passe",
+            "send": "Mettre à jour"
+        },
+        "contact": {
+            "joining": "Contactez-nous",
+            "email": "E-mail",
+            "name": "Nom",
+            "typeEmail": "Saisir votre adresse e-mail",
+            "username": "Saissir votre non",
+            "subject": "Sujet",
+            "accountProblem": "Problème avec mon compte",
+            "accountQuestion": "Question à propos de mon compte",
+            "connectionFailed": "Echec de connexion",
+            "suggestion": "Une suggestion ou une remarque ?",
+            "others": "Autres",
+            "message": "Message",
+            "messageFields": "Bonjour, je vous contacte car....",
+            "send": "Envoyer mon message"
+        }
+    }
+}

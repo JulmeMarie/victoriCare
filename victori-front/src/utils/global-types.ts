@@ -1,0 +1,19 @@
+import { ACTIONS, ALERTS, CONTENTTYPES, DEVICES, DIALOGS, DIRECTIONS, FORMNAMES, RIGHTS, ROLES } from "./Constants";
+
+export type EAlertType = (typeof ALERTS)[keyof typeof ALERTS];
+
+export type EDialogType = (typeof DIALOGS)[keyof typeof DIALOGS];
+
+export type ERolesType = (typeof ROLES)[keyof typeof ROLES];
+
+export type ERightType = (typeof RIGHTS)[keyof typeof RIGHTS];
+
+export type EActionType = (typeof ACTIONS)[keyof typeof ACTIONS];
+
+export type EDirectionType = (typeof DIRECTIONS)[keyof typeof DIRECTIONS];
+
+export type EFormNameType = (typeof FORMNAMES)[keyof typeof FORMNAMES];
+
+export type EcontentType = (typeof CONTENTTYPES)[keyof typeof CONTENTTYPES];
+
+export type EDevicesType = (typeof DEVICES)[keyof typeof DEVICES];
