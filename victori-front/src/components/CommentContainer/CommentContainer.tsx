@@ -6,13 +6,13 @@ import { DIRECTIONS } from '../../utils/Constants'
 import { CommentService } from '../../services/CommentService';
 import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from '../../redux/store';
-import { EDevicesType, EDirectionType } from '../../utils/global-types';
+import { EDirectionType } from '../../utils/global-types';
 interface CommentContainerProps { }
 
 const gap = 100 / 6;
 const minX = 0;
 const maxX = 5 * gap;
-const delay = 5000;
+const delay = 10000;
 
 const commentService = new CommentService();
 

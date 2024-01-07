@@ -1,3 +1,10 @@
+export const LANGUAGES = {
+    EN: "en",
+    ES: "es",
+    FR: "fr",
+    HT: "ht"
+} as const;
+
 export const ALERTS = {
     SUCCESS: "success",
     WARNING: "warning",

@@ -7,7 +7,7 @@ import HttpService from '../../../services/HttpService';
 import { LogInService } from '../../../services/LoginService';
 import { ALERTS, FORMNAMES } from '../../../utils/Constants';
 import i18n from '../../../utils/languages/I18N';
-import { setOnlineUser, refreshToken } from '../../../redux/reducers/app-reducer';
+import { setLogIn, refreshToken } from '../../../redux/reducers/app-reducer';
 import './LoginForm.css';
 import { defaultResult } from '../../../utils/global-default-values';
 import Alert from '../../Alert/Alert';
@@ -64,7 +64,7 @@ const LoginForm: FC<LoginFormProps> = ({ setFormName }) => {
       if (response.data) {
         HttpService.setTokenToLocalStorage(response.data.token);
         dispatch(refreshToken(response.data.token));
-        dispatch(setOnlineUser(response.data.createBy));
+        dispatch(setLogIn(response.data.createBy));
         setTimeout(() => {
           navigate('/home');
         }, 500);

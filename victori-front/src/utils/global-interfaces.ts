@@ -21,6 +21,13 @@ export interface User {
 
 }
 
+export interface LogIn {
+    user: User,
+    token: string,
+    createAt: Date,
+    expireAt: Date | null
+}
+
 export interface ISelectOption {
     value: string,
     label: string

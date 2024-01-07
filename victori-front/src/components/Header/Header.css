@@ -45,11 +45,7 @@
   height: 1.8rem;
   width: 10rem;
   margin: 0.3rem;
-  margin: auto;
-  background-image: url('../../../public/logo-name.png');
-  background-position: center;
-  background-size: cover;
-  display: block;
+  margin-top: 0.8rem;
 }
 
 .Header-menu {
@@ -77,8 +73,8 @@
   text-transform: capitalize;
 }
 
-.Header-menu li a,
-.Header-menu li div {
+.Header-menu>li>a,
+.Header-menu>li>div {
   display: block;
   height: 100%;
   color: pink;
@@ -121,8 +117,42 @@
   cursor: pointer;
 }
 
+.Header-menu__mobile {
+  display: none;
+}
+
+.Header-menu__computer {
+  display: flex;
+}
+
+.Header-menu__computer .Language ul {
+  position: absolute;
+  left: 0;
+}
+
+.Header-menu__computer .Language>div {
+  padding-right: 1rem;
+  padding-left: 1rem;
+  text-align: left;
+  border-left: solid white 1px;
+}
+
 @media screen and (max-width: 480px) {
-  .Header-menu {
-    margin-right: 0 !important;
+  .Header-menu__computer {
+    display: none;
+  }
+
+  .Header-menu__mobile {
+    display: block;
+    margin-right: 0;
+  }
+
+  .Header-menu__mobile li {
+    line-height: 4rem;
+  }
+
+  .Header-menu__mobile li svg {
+    height: 1.5rem;
+    width: 1.5rem;
   }
 }

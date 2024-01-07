@@ -1,5 +1,7 @@
 import { PayloadAction } from "@reduxjs/toolkit";
-import { IResult, IUserAction, User } from "../../utils/global-interfaces";
+import { LANGUAGES } from "../../utils/Constants";
+import { IResult, IUserAction, LogIn, User } from "../../utils/global-interfaces";
+import { ELanguageType } from "../../utils/global-types";
 import { IAppState } from "../reducers/app-reducer";
 
 export const appActions = {
@@ -9,7 +11,7 @@ export const appActions = {
         return state;
     },
 
-    setSideNavStatus: (state: IAppState, action: PayloadAction<boolean>) => {
+    setDrawerStatus: (state: IAppState, action: PayloadAction<boolean>) => {
         state.sideNaveStatus = action.payload;
         return state;
     },
@@ -19,8 +21,8 @@ export const appActions = {
         return state;
     },
 
-    setOnlineUser: (state: IAppState, action: PayloadAction<User>) => {
-        state.onlineUser = action.payload;
+    setLogIn: (state: IAppState, action: PayloadAction<LogIn>) => {
+        state.logIn = action.payload;
         return state;
     },
 
@@ -40,26 +42,19 @@ export const appActions = {
         return state;
     },
 
-    initDevice: (state: IAppState) => {
-        // eslint-disable-next-line no-restricted-globals
-        const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-        state.device = width;
-        return state;
-    },
-
     initLang: (state: IAppState) => {
         let lang = localStorage.getItem("babycare-lang");
         if (!lang) {
             lang = navigator.language.split("-")[0];
         }
-        state.lang = lang ? lang : "fr";
+        state.lang = lang ? lang as ELanguageType : LANGUAGES.FR;
         return state;
     },
     setScroll: (state: IAppState, action: PayloadAction<number>) => {
         const scroll = action.payload < 0 ? 0 : action.payload;
         state.scroll = scroll;
     },
-    updateLang: (state: IAppState, action: PayloadAction<string>) => {
+    updateLang: (state: IAppState, action: PayloadAction<ELanguageType>) => {
         state.lang = action.payload;
         localStorage.setItem("babycare-lang", action.payload);
         return state;

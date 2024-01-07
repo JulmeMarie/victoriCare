@@ -1,4 +1,4 @@
-import { ACTIONS, ALERTS, CONTENTTYPES, DEVICES, DIALOGS, DIRECTIONS, FORMNAMES, RIGHTS, ROLES } from "./Constants";
+import { ACTIONS, ALERTS, CONTENTTYPES, DEVICES, DIALOGS, DIRECTIONS, FORMNAMES, LANGUAGES, RIGHTS, ROLES } from "./Constants";
 
 export type EAlertType = (typeof ALERTS)[keyof typeof ALERTS];
 
@@ -16,4 +16,6 @@ export type EFormNameType = (typeof FORMNAMES)[keyof typeof FORMNAMES];
 
 export type EcontentType = (typeof CONTENTTYPES)[keyof typeof CONTENTTYPES];
 
-export type EDevicesType = (typeof DEVICES)[keyof typeof DEVICES];
+export type EDeviceType = (typeof DEVICES)[keyof typeof DEVICES];
+
+export type ELanguageType = (typeof LANGUAGES)[keyof typeof LANGUAGES];

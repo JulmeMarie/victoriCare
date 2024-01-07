@@ -10,9 +10,9 @@ public interface IContactService {
 
 	ContactModel create(ContactDTO contactReq);
 
-	ContactModel update(User onlineUser, ContactDTO contactReq);
+	ContactModel update(User connection, ContactDTO contactReq);
 
-	void delete(User onlineUser, Integer contactId);
+	void delete(User connection, Integer contactId);
 
 	ContactModel unique(Integer contactId);
 

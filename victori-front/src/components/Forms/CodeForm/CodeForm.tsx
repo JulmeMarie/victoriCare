@@ -9,7 +9,7 @@ import { CodeService } from '../../../services/CodeService';
 import { setUserAction } from '../../../redux/reducers/app-reducer';
 import { useDispatch, useSelector } from 'react-redux';
 import Alert from '../../Alert/Alert';
-import { AppState } from '../../../redux/store';
+import { AppDispatch, AppState } from '../../../redux/store';
 import SubmitButton from '../SubmitButton/SubmitButton';
 
 interface CodeFormProps {
@@ -33,7 +33,7 @@ export const defaultValues = {
 const service = new CodeService();
 
 const CodeForm: FC<CodeFormProps> = ({ setFormName }) => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const userAction = useSelector((state: AppState) => state.common_state.userAction);
   const [formValues, setFormValues] = useState<ICodeForm>(defaultValues);
   const [result, setResult] = useState<IResult>(defaultResult);

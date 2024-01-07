@@ -1,7 +1,7 @@
 import { EUserTypes } from "../utils/Constants";
 import { HttpService } from "../redux/actions/http-action";
 import { EDialogTypes, ALERTS } from "../utils/Constants";
-import { updateUser, deleteUser, initUsers, setOnlineUser } from "../redux/reducers/app-reducer";
+import { updateUser, deleteUser, initUsers, setLogIn } from "../redux/reducers/app-reducer";
 import { FmcValuesService } from "./FmcValuesService";
 
 const POST_ENDPOINT_USER = "right-usr/user";
@@ -105,8 +105,8 @@ export class UserService {
       this.data.setLoading(false);
       if (response.ok) {
         this.data.dispatch(updateUser(response.data));
-        if (form.onlineUserId.value === form.id.value) {
-          this.data.dispatch(setOnlineUser(response.data));
+        if (form.connectionId.value === form.id.value) {
+          this.data.dispatch(setLogIn(response.data));
         }
         this.data.setResult({
           type: ALERTS.SUCCESS,
@@ -245,7 +245,7 @@ export class UserService {
       this.data.setLoading(false);
       if (response.ok) {
         this.data.dispatch(updateUser(response.data));
-        this.data.dispatch(setOnlineUser(response.data));
+        this.data.dispatch(setLogIn(response.data));
         this.data.setResult({
           type: ALERTS.SUCCESS,
           message: "Votre photo de profil a été mise à jour.",

@@ -5,8 +5,8 @@ import IndexView from './IndexView';
 
 describe('<IndexView />', () => {
   test('it should mount', () => {
-    render(<IndexView />);
-    
+    render(<IndexView logIn={null} />);
+
     const indexView = screen.getByTestId('IndexView');
 
     expect(indexView).toBeInTheDocument();

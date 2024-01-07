@@ -46,9 +46,9 @@ const Carousel: FC<CarouselProps> = () => {
               <div key={index} className='Carousel-item'>
                 <h2 className='Carousel-item__title'>{item.title1}</h2>
                 <h1 className='Carousel-item__title'>{item.title2}</h1>
-                <div className='Carousel-item__description'>{item.description}</div>
+                <div className='Carousel-item__description-wrapper'> <div className='Carousel-item__description'>{item.description}</div></div>
                 <div className='Carousel-item__link'>
-                  <a href={item.link}> En savoir plus </a>
+                  <a href="#about-us"> En savoir plus </a>
                   <a href='>/signin'> Inscrivez-vous </a>
                 </div>
               </div>)}

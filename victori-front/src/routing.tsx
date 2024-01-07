@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { FC } from 'react';
 import './index.css';
 import { Routes, Route } from 'react-router-dom';
 import Error404View from './views/Error404View/Error404View';
 import IndexView from './views/IndexView/IndexView';
 import AboutView from './views/AboutView/AboutView';
+import { LogIn } from './utils/global-interfaces';
 
-const Routing = () => (
+
+interface RoutingProps {
+  logIn: LogIn | null
+}
+export const Routing: FC<RoutingProps> = ({ logIn }) => (
   <Routes>
-    <Route path="/" element={<IndexView />} >
+    <Route path="/" element={<IndexView logIn={logIn} />} >
       <Route path="cares/current" element={<AboutView />} />
     </Route>
     <Route path="*" element={<Error404View />} />

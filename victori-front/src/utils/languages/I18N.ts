@@ -1,4 +1,7 @@
-export const DEFAULT_LANG = "fr";
+import { LANGUAGES } from "../Constants";
+import { ELanguageType } from "../global-types";
+
+export const DEFAULT_LANG = LANGUAGES.FR as ELanguageType;
 class I18N {
     langMap = new Map<string, any>();
     langJson: any;
@@ -10,7 +13,7 @@ class I18N {
         if (!lang) {
             lang = navigator.language.split("-")[0];
         }
-        i18n.langStr = lang ? lang : DEFAULT_LANG;
+        i18n.langStr = lang ? lang as ELanguageType : DEFAULT_LANG;
         return i18n.loadLang();
     }
 
@@ -25,7 +28,7 @@ class I18N {
             });
         });
     }
-    setLang = async (lang: string) => {
+    setLang = async (lang: ELanguageType) => {
         if (lang.toLocaleLowerCase() !== this.langStr.toLocaleLowerCase()) {
             this.langStr = lang;
             if (!this.langMap.has(lang)) {

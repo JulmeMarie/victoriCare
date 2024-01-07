@@ -36,3 +36,10 @@
     height: 2rem;
     border-bottom: solid white 1px;
 }
+
+@media screen and (max-width: 480px) {
+    .Sidebar {
+        width: 100%;
+        order: 0;
+    }
+}

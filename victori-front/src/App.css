@@ -5,8 +5,31 @@
 
 }
 
-.title {
+.logo-name {
+  margin: auto;
+  background-image: url('/public/logo-name.png');
+  background-position: center;
+  background-size: cover;
+  display: block;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.title,
+p {
   margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }
 
 .content-title {

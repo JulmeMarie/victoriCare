@@ -1,13 +1,13 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
-import SideNav from './SideNav';
+import Drawer from './Drawer';
 
-describe('<SideNav />', () => {
+describe('<Drawer />', () => {
   test('it should mount', () => {
-    render(<SideNav />);
-    
-    const sideNav = screen.getByTestId('SideNav');
+    render(<Drawer logIn={null} />);
+
+    const sideNav = screen.getByTestId('Drawer');
 
     expect(sideNav).toBeInTheDocument();
   });

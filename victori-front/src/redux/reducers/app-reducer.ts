@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { IResult, IUserAction, User } from '../../utils/global-interfaces';
-import { DEVICES } from '../../utils/Constants';
+import { IResult, IUserAction, LogIn, User } from '../../utils/global-interfaces';
 import { appActions } from '../actions/app-actions';
+import { EDeviceType, ELanguageType } from '../../utils/global-types';
+import { DEFAULT_LANG } from '../../utils/languages/I18N';
 
 export interface IAppState {
     documentation: IResult;
     comments: IResult;
     token: string | null;
-    onlineUser: User | null;
+    logIn: LogIn | null;
     userAction: IUserAction;
     scroll: number;
-    lang: string;
-    device: number;
+    lang: ELanguageType;
     sideNaveStatus: boolean;
 }
 
@@ -21,14 +21,13 @@ export const appSlice = createSlice({
         documentation: {},
         comments: {},
         token: null,
-        onlineUser: null,
+        logIn: null,
         userAction: {},
         scroll: 0,
-        lang: "fr",
-        device: DEVICES.DEFAULT,
+        lang: DEFAULT_LANG,
         sideNaveStatus: false
     } as IAppState,
     reducers: appActions
 });
 
-export const { setSideNavStatus, initDevice, setOnlineUser, setUserAction, setLoadingDoc, setLoadedDoc, setLoadingComments, setLoadedComments, refreshToken, updateLang, initLang, setScroll } = appSlice.actions;
+export const { setDrawerStatus, setLogIn, setUserAction, setLoadingDoc, setLoadedDoc, setLoadingComments, setLoadedComments, refreshToken, updateLang, initLang, setScroll } = appSlice.actions;

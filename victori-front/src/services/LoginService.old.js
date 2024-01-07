@@ -1,6 +1,6 @@
 import { HttpService } from "../redux/actions/http-action";
 import { ALERTS } from "../utils/Constants";
-import { setOnlineUser, setPage, resetContacts, resetCommons } from "../redux/reducers/app-reducer";
+import { setLogIn, setPage, resetContacts, resetCommons } from "../redux/reducers/app-reducer";
 
 const DELAY = 58 * 60 * 1000; //19mn
 const LOGIN_ENDPOINT_CONNECTION = "right-anm/login";
@@ -25,7 +25,7 @@ export class LoginService {
       HttpService.read(TOKEN_ENDPOINT_CONNECTION).then(response => {
         if (response.ok) {
           LoginService.setTokenToLocalStorage(response.data.token);
-          this.data.dispatch(setOnlineUser(response.data.createBy));
+          this.data.dispatch(setLogIn(response.data.createBy));
           resolve()
         }
         else {
@@ -55,7 +55,7 @@ export class LoginService {
           type: ALERTS.SUCCESS,
           message: "Authentification réussie",
         });
-        this.data.dispatch(setOnlineUser(response.data.createBy));
+        this.data.dispatch(setLogIn(response.data.createBy));
         setTimeout(() => {
           this.data.navigate("/dashboard");
         }, 500);
@@ -78,7 +78,7 @@ export class LoginService {
       this.data.dispatch(resetCommons());
       if (response.ok) {
         LoginService.setTokenToLocalStorage(response.data.token);
-        this.data.dispatch(setOnlineUser(response.data.createBy));
+        this.data.dispatch(setLogIn(response.data.createBy));
       }
       this.data.navigate("/");
     });

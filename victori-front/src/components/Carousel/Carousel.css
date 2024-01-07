@@ -46,6 +46,7 @@ section.show {
     z-index: 2;
     position: relative;
     height: 100%;
+    position: relative;
 }
 
 .Carousel-items:hover {
@@ -79,12 +80,32 @@ h2.Carousel-item__title {
     margin-bottom: 0.5rem;
 }
 
+.Carousel-item__description-wrapper {
+    margin-left: 0;
+    background-color: var(--main-color-300);
+    border-radius: 0.2rem;
+    width: 60%;
+    height: 80px;
+    box-sizing: border-box;
+    position: relative;
+    /*border: 1mm ridge rgba(211, 220, 50, .6);*/
+    /*border: solid rgba(211, 220, 50, .6) 0.1rem;*/
+}
+
 .Carousel-item__description {
     color: white;
-    max-width: 50%;
-    margin-left: 0;
     text-align: justify;
     font-size: 0.9rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    box-sizing: border-box;
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .Carousel-item__link {
@@ -94,7 +115,7 @@ h2.Carousel-item__title {
     text-transform: uppercase;
     width: 50%;
     text-align: left;
-    background-color: rgb(206, 97, 115);
+    /*background-color: rgb(206, 97, 115);*/
 }
 
 .Carousel-item__link a {
@@ -150,10 +171,41 @@ h2.Carousel-item__title {
         width: 100% !important;
         margin: 0 !important;
         box-sizing: border-box;
+        background-image: url('../../../public/bg.png');
+        background-position: left 1em top 0;
     }
 
     .Carousel-box {
         width: 100% !important;
         box-sizing: border-box;
+    }
+
+    .Carousel-item__link {
+        background-color: transparent;
+        width: 100%;
+        justify-content: space-around;
+        display: flex;
+        font-size: 0.8rem;
+    }
+
+    .Carousel-item__description-wrapper {
+        width: 98%;
+        height: 100px;
+    }
+
+    .Carousel-item__description {
+        -webkit-line-clamp: 3;
+    }
+
+    h1.Carousel-item__title {
+        font-size: 1.2rem;
+    }
+
+    h2.Carousel-item__title {
+        font-size: 0.9rem;
+    }
+
+    .Carousel-box {
+        border: solid transparent 1rem
     }
 }

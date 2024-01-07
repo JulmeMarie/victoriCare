@@ -12,9 +12,9 @@ export class MenuService {
     return new MenuService();
   }
 
-  initMenu = (menuRx, onlineUser) => {
-    if (onlineUser && menuRx && menuRx.length > 0) {
-      let filteredMenu = this.conputeMenu(menuRx, onlineUser.id > 0).filter(item => {
+  initMenu = (menuRx, connection) => {
+    if (connection && menuRx && menuRx.length > 0) {
+      let filteredMenu = this.conputeMenu(menuRx, connection.id > 0).filter(item => {
 
         if (
           (item.head && item.head.type.includes("dashboard")) ||
@@ -29,11 +29,11 @@ export class MenuService {
             item.href.includes("donation") ||
             item.href.includes("mention") ||
             item.href.includes("partner")) &&
-            onlineUser.right !== ERightTypes.ADMINISTRATOR.key) {
+            connection.right !== ERightTypes.ADMINISTRATOR.key) {
             return false
           }
           else {
-            return onlineUser.right === ERightTypes.ADMINISTRATOR.key || onlineUser.right === ERightTypes.MODERATOR.key;
+            return connection.right === ERightTypes.ADMINISTRATOR.key || connection.right === ERightTypes.MODERATOR.key;
           }
         }
         return true;

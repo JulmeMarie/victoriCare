@@ -4,6 +4,9 @@ import { AppState } from '../../redux/store';
 import i18n from '../../utils/languages/I18N';
 import { updateLang } from '../../redux/reducers/app-reducer';
 import './Language.css';
+import { LANGUAGES } from '../../utils/Constants';
+import { ELanguageType } from '../../utils/global-types';
+
 
 interface LanguageProps { }
 
@@ -11,9 +14,8 @@ const Language: FC<LanguageProps> = () => {
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
   const lang = i18n.langStr;
-  const langArr = ["en", "fr", "ht", "es"];
 
-  const handleLangChange = (lang: string) => {
+  const handleLangChange = (lang: ELanguageType) => {
     i18n.setLang(lang).then(() => {
       dispatch(updateLang(lang));
     });
@@ -21,12 +23,15 @@ const Language: FC<LanguageProps> = () => {
 
   return (
     <div className="Language" data-testid="Language" onClick={() => { setIsOpen(!isOpen) }}>
-      <div> <i className={"em em-" + lang}></i></div>
+      <div className='flex-row'>
+        <div className='em-icon'><i className={"em em-" + lang}></i></div>
+        <div className='menu-text'>{i18n.t("lang." + lang)}</div>
+      </div>
       {
         isOpen && <ul>
           {
-            langArr.map((key, index) =>
-              key !== lang && <li key={index} onClick={() => handleLangChange(key)}> <i className={"em em-" + key}></i> {i18n.t("lang." + key)}</li>
+            Object.values(LANGUAGES).map((value, index) =>
+              value !== lang && <li className='flex-row' key={index} onClick={() => handleLangChange(value)}> <div className='em-icon'><i className={"em em-" + value}></i></div> <div className='menu-text'> {i18n.t("lang." + value)}</div></li>
             )
           }
         </ul>

@@ -8,8 +8,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import './IndexView.css';
 import { DocumentationService } from '../../services/DocumentationService';
 import { AppState } from '../../redux/store';
+import { LogIn } from '../../utils/global-interfaces';
 
-interface IndexViewProps { }
+interface IndexViewProps {
+  logIn: LogIn | null;
+}
 export interface Service {
   title: string,
   paragraphs: string[],
@@ -18,7 +21,7 @@ export interface Service {
 
 const docService = DocumentationService.create();
 
-const IndexView: FC<IndexViewProps> = () => {
+const IndexView: FC<IndexViewProps> = ({ logIn }) => {
   const documentation = useSelector((state: AppState) => state.common_state.documentation);
   const dispatch = useDispatch();
   const outlet = useOutlet();
@@ -36,7 +39,7 @@ const IndexView: FC<IndexViewProps> = () => {
         {
           outlet ||
           <>{
-            documentation.data && <article className='Introduction-sentence__box'>
+            documentation.data && <article className='Introduction-sentence__box' id="about-us">
               <h1 className='title Introduction-sentence__title'>COMMENT VICTORICARE VOUS AIDE ? </h1>
               {documentation.data.catchSetences.map((sentence: any, index: number) =>
                 <section className='Introduction-sentence__description' key={index}>
@@ -59,7 +62,6 @@ const IndexView: FC<IndexViewProps> = () => {
             {documentation.data.servicesTab.map((serv: any, index: number) => <ServiceCard key={index} service={serv} />)}
           </div>
         </article>}
-
       <article className='Third-content__container'>
         <CommentContainer />
       </article>

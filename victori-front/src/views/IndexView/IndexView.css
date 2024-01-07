@@ -10,7 +10,7 @@
 }
 
 article.Second-content__container {
-    padding-top: 1rem;
+    padding: 1rem;
 }
 
 div.Second-content__cards {
@@ -36,7 +36,9 @@ div.First-content__container {
 }
 
 article.Introduction-sentence__box {
-    padding-top: 2rem;
+    padding-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
     box-sizing: border-box;
     width: 68%;
 }
@@ -47,6 +49,7 @@ article.Introduction-sentence__box {
     width: 100%;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     margin-bottom: 2rem;
+    box-sizing: border-box;
 }
 
 .Introduction-sentence__description p {
@@ -58,6 +61,7 @@ article.Introduction-sentence__box {
 
 .Introduction-sentence__description figure {
     width: 30%;
+    margin: 0;
 }
 
 .Introduction-sentence__description figure img {
@@ -88,4 +92,52 @@ article.Introduction-sentence__box {
 
 .Third-content__container {
     width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width: 480px) {
+
+    .IndexView {
+        width: 100%;
+        margin: 0;
+        margin-top: 290px;
+    }
+
+    div.First-content__container {
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    article.Introduction-sentence__box {
+        width: 100%;
+        order: 1;
+    }
+
+    .Introduction-sentence__title {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .Introduction-sentence__description {
+        flex-direction: column;
+    }
+
+    .Introduction-sentence__description:nth-child(2n+1) p {
+        order: 0;
+    }
+
+    .Introduction-sentence__description p,
+    .Introduction-sentence__description figure {
+        width: 100%;
+    }
+
+    div.Second-content__cards {
+        flex-direction: column;
+    }
+
+    .Second-content__title {
+        font-size: 1.2rem;
+    }
 }

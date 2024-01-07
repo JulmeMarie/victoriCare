@@ -1,6 +1,6 @@
 import { HttpService } from "../redux/actions/http-action";
 import { ALERTS } from "../utils/Constants";
-import { setOnlineUser } from "../redux/reducers/app-reducer";
+import { setLogIn } from "../redux/reducers/app-reducer";
 import { ActionTypes } from "../utils/Constants";
 
 const RECOVERY_ENDPOINT_EMAIL = "right-anm/recover";
@@ -80,7 +80,7 @@ export class EmailService {
             message:
               "Un e-mail contenant le code de validation de l'opération vient de vous être envoyé. Renseignez-le dans le formulaire suivant. Merci.",
           });
-          //dispatch(setOnlineUser(response.data));
+          //dispatch(setLogIn(response.data));
           setTimeout(() => {
             this.data.navigate(
               "/code/0/" + ActionTypes.RECOVERY + "/" + response.data.id
@@ -106,7 +106,7 @@ export class EmailService {
             type: ALERTS.SUCCESS,
             message: "Mise à jour d'adresse e-mil éffectué.",
           });
-          this.data.dispatch(setOnlineUser(response.data));
+          this.data.dispatch(setLogIn(response.data));
           setTimeout(() => {
             this.data.showCodeForm(true);
           }, RESPONSE_DURATION);

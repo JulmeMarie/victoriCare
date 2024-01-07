@@ -1,4 +1,5 @@
 package com.victoricare.api.services;
+
 import java.util.List;
 import java.util.Optional;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,7 +14,7 @@ import com.victoricare.api.models.UserModel;
 
 public interface IUserService {
 
-	public void signUp(User author,UserDTO userRequest);
+	public void signUp(User author, UserDTO userRequest);
 
 	public UserModel update(User author, PasswordEncoder encoder, UserDTO userRequest);
 
@@ -27,19 +28,18 @@ public interface IUserService {
 
 	public UserModel unique(User author, Integer userId);
 
-
 	public UserModel updatePassword(User author, PasswordEncoder encoder, PasswordDTO passwordRequest);
 
 	public UserModel recover(String emailStr);
 
 	public boolean isContactAddressee(Integer userId);
 
-	public UserModel updateEmail(User onlineUser, String email);
+	public UserModel updateEmail(User connection, String email);
 
 	public UserModel validate(ValidateDTO validateRequest);
 
 	public UserModel updatePasswordWithCode(PasswordEncoder encoder, PasswordDTO passwordRequest);
 
-    public UserModel uploadImage(User onlineUser, MultipartFile mFile);
+	public UserModel uploadImage(User connection, MultipartFile mFile);
 
 }
