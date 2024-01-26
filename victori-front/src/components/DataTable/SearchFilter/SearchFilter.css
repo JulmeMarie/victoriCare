@@ -1,0 +1,20 @@
+.SearchFilter {
+    display: flex;
+    margin-right: 1rem;
+    padding-left: 1rem;
+}
+
+.SearchFilter>input {
+    height: fit-content;
+    margin: auto;
+    padding: 0.2rem 0.5rem;
+}
+
+.SearchFilter>label {
+    margin: auto;
+    margin-right: 0.5rem;
+}
+
+*:focus {
+    outline: none;
+}

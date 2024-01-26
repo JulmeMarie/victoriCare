@@ -5,7 +5,7 @@ import { FaEnvelope, FaLock, FaUser, FaKey, FaSpinner } from 'react-icons/fa';
 import { IResult } from '../../../utils/global-interfaces';
 import HttpService from '../../../services/HttpService';
 import { LogInService } from '../../../services/LoginService';
-import { ALERTS, FORMNAMES } from '../../../utils/Constants';
+import { ALERTS, CONTENTSNAME } from '../../../utils/Constants';
 import i18n from '../../../utils/languages/I18N';
 import { setLogIn, refreshToken } from '../../../redux/reducers/app-reducer';
 import './LoginForm.css';
@@ -30,7 +30,7 @@ export interface ILogInForm {
 export const defaultValues = {
   email: "",
   password: "",
-  name: FORMNAMES.LOGIN_OWNER,
+  name: CONTENTSNAME.LOGIN_OWNER,
   yourName: "",
   accountName: "",
   code: 0,
@@ -45,8 +45,8 @@ const LoginForm: FC<LoginFormProps> = ({ setFormName }) => {
   const [formValues, setFormValues] = useState<ILogInForm>(defaultValues);
   const [result, setResult] = useState<IResult>(defaultResult);
 
-  const isParent = formValues.name === FORMNAMES.LOGIN_OWNER;
-  const isBabySitter = formValues.name === FORMNAMES.LOGIN_ACCESS;
+  const isParent = formValues.name === CONTENTSNAME.LOGIN_OWNER;
+  const isBabySitter = formValues.name === CONTENTSNAME.LOGIN_ACCESS;
 
   const handleChange = (key: string, value: any) => {
     setFormValues(values => {
@@ -84,18 +84,18 @@ const LoginForm: FC<LoginFormProps> = ({ setFormName }) => {
   }
 
   return (
-    <section className="LoginForm" data-testid="LoginForm">
+    <section className="LoginForm IndentificationForms" data-testid="LoginForm">
       <div className='row'>
         <h1 className='title form-title'><FaLock /> {i18n.t('login.authentication')}</h1>
       </div>
       <div className='row form-buttons'>
         <button
           className={isParent ? 'head-form-button active' : 'head-form-button'}
-          onClick={() => changeForm(FORMNAMES.LOGIN_OWNER)}>{i18n.t("login.parent")}
+          onClick={() => changeForm(CONTENTSNAME.LOGIN_OWNER)}>{i18n.t("login.parent")}
         </button>
         <button
           className={isBabySitter ? 'head-form-button active' : 'head-form-button'}
-          onClick={() => changeForm(FORMNAMES.LOGIN_ACCESS)}>{i18n.t("login.babysitter")}
+          onClick={() => changeForm(CONTENTSNAME.LOGIN_ACCESS)}>{i18n.t("login.babysitter")}
         </button>
       </div>
       <form method='post' action='#' onSubmit={handleSubmit}>
@@ -104,7 +104,7 @@ const LoginForm: FC<LoginFormProps> = ({ setFormName }) => {
           {result.data && <Alert message={result.success} showIcon type={ALERTS.SUCCESS} />}
         </div>
         {isBabySitter &&
-          <div className='row' id={FORMNAMES.LOGIN_ACCESS}>
+          <div className='row' id={CONTENTSNAME.LOGIN_ACCESS}>
             <div className='row input-row'>
               <input
                 className='col-100'
@@ -138,7 +138,7 @@ const LoginForm: FC<LoginFormProps> = ({ setFormName }) => {
           </div>
         }
         {isParent &&
-          <div className='row' id={FORMNAMES.LOGIN_OWNER}>
+          <div className='row' id={CONTENTSNAME.LOGIN_OWNER}>
             <div className='row input-row'>
               <input
                 className='col-100'
@@ -165,7 +165,7 @@ const LoginForm: FC<LoginFormProps> = ({ setFormName }) => {
             <div className='row'>
               <div
                 className='form-link'
-                onClick={() => setFormName(FORMNAMES.RECOVERY)}>{i18n.t("login.passwordForgotten")} ?
+                onClick={() => setFormName(CONTENTSNAME.RECOVERY)}>{i18n.t("login.passwordForgotten")} ?
               </div>
             </div>
           </div>
@@ -179,7 +179,7 @@ const LoginForm: FC<LoginFormProps> = ({ setFormName }) => {
         <div className='row'>
           <div
             className='form-link text-center'
-            onClick={() => setFormName(FORMNAMES.SIGNIN)}>{i18n.t("login.noaccount")} ?
+            onClick={() => setFormName(CONTENTSNAME.SIGNIN)}>{i18n.t("login.noaccount")} ?
           </div>
         </div>
       </form>

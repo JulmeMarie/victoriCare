@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { userActions } from '../actions/user-actions';
 
 export const userSlice = createSlice({
-    name: "user_state",
+    name: "userReducer",
     initialState: {
         status: {
             isLoading: false,

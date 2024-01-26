@@ -6,7 +6,7 @@ import { FaLock, FaUserCircle, FaEnvelope, FaSpinner } from 'react-icons/fa';
 import Alert from '../../Alert/Alert';
 import { IResult } from '../../../utils/global-interfaces';
 import { SignInService } from '../../../services/SignInService';
-import { ALERTS, FORMNAMES } from '../../../utils/Constants';
+import { ALERTS, CONTENTSNAME } from '../../../utils/Constants';
 import { defaultResult } from '../../../utils/global-default-values';
 
 interface SignInFormProps {
@@ -25,7 +25,7 @@ export const defaultValues = {
   password1: "",
   password2: "",
   disable: true,
-  name: FORMNAMES.SIGNIN
+  name: CONTENTSNAME.SIGNIN
 } as ISignInForm
 
 const service = new SignInService();
@@ -46,7 +46,7 @@ const SignInForm: FC<SignInFormProps> = ({ setFormName }) => {
       setResult(response);
       if (response.data) {
         setTimeout(() => {
-          setFormName(FORMNAMES.CODE);
+          setFormName(CONTENTSNAME.CODE);
         }, 500);
       }
       else if (response.isError) {
@@ -112,7 +112,7 @@ const SignInForm: FC<SignInFormProps> = ({ setFormName }) => {
         <div className='row'>
           <div
             className='form-link text-center'
-            onClick={() => { setFormName(FORMNAMES.LOGIN_OWNER) }}>{i18n.t("signin.havingaccount")}
+            onClick={() => { setFormName(CONTENTSNAME.LOGIN_OWNER) }}>{i18n.t("signin.havingaccount")}
           </div>
         </div>
       </form>

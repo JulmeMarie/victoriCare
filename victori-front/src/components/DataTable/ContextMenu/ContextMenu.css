@@ -1,0 +1,69 @@
+.ContextMenu {}
+
+.ContextMenu {
+    position: absolute;
+    text-align: left;
+    background-color: white;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.1);
+    z-index: 400;
+    min-width: 12rem;
+}
+
+.ContextMenu__text {
+    padding-left: 0.5rem;
+    margin-left: 0.5rem;
+    border-left: solid white 0.1rem;
+}
+
+.ContextMenu__close {
+    position: absolute;
+    top: -0.5rem;
+    right: -0.5rem;
+    background-color: rgb(247, 241, 241);
+    border: solid black 0.1rem;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    line-height: 1rem;
+    cursor: pointer;
+    z-index: 500;
+}
+
+.ContextMenu__close:hover {
+    background-color: white;
+    border: solid black 0.1rem;
+}
+
+.ContextMenu__close svg {
+    margin: auto;
+}
+
+.ContextMenu {
+    display: flex;
+    flex-direction: column;
+}
+
+.ContextMenuItem {
+    padding: 0.5rem 1rem;
+    border-bottom: solid white 0.01rem;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    opacity: 0.9;
+}
+
+.ContextMenuItem:hover {
+    background-color: #f2eeee;
+    opacity: 1;
+}
+
+.ContextMenuItem.send {
+    order: 0;
+}
+
+.ContextMenuItem.edit {
+    order: 1;
+}
+
+.ContextMenuItem.delete {
+    order: 2;
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title th:remove="all">Template for HTML email</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body>
+        <p>Bonjour, <span th:text="${firstname}">firstname</span> <span th:text="${lastname}">lastname</span>!</p>
+        <br/><p>Vous venez d'initier une demande de récupérationde compte sur le site <b>FMC Haïti</b></p>
+        <p>Voici votre mot de passe provisoire : <b><span th:text="${password}">password</span></b><p>
+        <p>Dorénavant, vous pouvez utiliser ce mot de passe pour vous authentifier sur le site <a th:href="@{${frontEndURL} + '#login'}">FMC Haïti</a>.</p>
+	    <p><i><b>Note :</b>Pensez à modifier le mot de passe aussitôt connecté car il n'est utilisable qu'une fois.</I></P>
+	    <p>A très vite sur le site <a th:href="@{${frontEndURL}}">FMC Haïti</a></p>
+        <p>Cordialement, </p>
+        <br/><p><em>Association FMC Haïti</em></p>
+    </body>
+</html>

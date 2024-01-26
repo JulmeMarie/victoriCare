@@ -2,8 +2,8 @@ import { ILogInForm } from "../components/Forms/LoginForm/LoginForm";
 import { IRecoveryForm } from "../components/Forms/RecoveryForm/RecoveryForm";
 import { defaultResult, successResult } from "../utils/global-default-values";
 import { CONTENTTYPES } from "../utils/Constants";
-import { Util } from "../utils/Util";
 import HttpService from "./HttpService";
+import { checkMail } from "../utils/global-util";
 
 export class RecoveryService {
     recover = async (formValues: IRecoveryForm) => {
@@ -21,6 +21,6 @@ export class RecoveryService {
     }
 
     validate(values: IRecoveryForm): void {
-        values.disable = !Util.checkMail(values.email);
+        values.disable = !checkMail(values.email);
     }
 }

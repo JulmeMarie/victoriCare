@@ -1,0 +1,30 @@
+.NotificationList {
+    position: relative;
+    cursor: pointer;
+    width: 100%;
+}
+
+.NotificationList ul {
+    margin: 0;
+    padding: 0;
+    width: 12rem;
+}
+
+.NotificationList ul li {
+    width: inherit;
+    line-height: 2rem;
+    background-color: rgb(238, 226, 228);
+    color: var(--main-color);
+    border-bottom: solid white 1px;
+    text-align: left;
+    padding-left: 1rem;
+    white-space: nowrap;
+    box-sizing: border-box;
+    font-weight: 100;
+}
+
+.NotificationList ul li:hover {
+    background-color: pink;
+
+    transition: all ease-in-out 0.5s;
+}

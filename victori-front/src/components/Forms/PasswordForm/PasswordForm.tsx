@@ -6,7 +6,7 @@ import { FaLock, FaSpinner } from 'react-icons/fa';
 import Alert from '../../Alert/Alert';
 import { IResult } from '../../../utils/global-interfaces';
 import { PasswordService } from '../../../services/PasswordService';
-import { ALERTS, FORMNAMES } from '../../../utils/Constants';
+import { ALERTS, CONTENTSNAME } from '../../../utils/Constants';
 import { defaultResult } from '../../../utils/global-default-values';
 
 interface PasswordFormProps {
@@ -23,7 +23,7 @@ export const defaultValues = {
   password1: "",
   password2: "",
   disable: true,
-  name: FORMNAMES.PASSWORD
+  name: CONTENTSNAME.PASSWORD
 } as IPasswordForm
 
 const service = new PasswordService();
@@ -100,7 +100,7 @@ const PasswordForm: FC<PasswordFormProps> = ({ setFormName }) => {
         <div className='row'>
           <div
             className='form-link text-center'
-            onClick={() => { setFormName(FORMNAMES.LOGIN_OWNER) }}>{i18n.t("signin.havingaccount")}
+            onClick={() => { setFormName(CONTENTSNAME.LOGIN_OWNER) }}>{i18n.t("signin.havingaccount")}
           </div>
         </div>
       </form>
