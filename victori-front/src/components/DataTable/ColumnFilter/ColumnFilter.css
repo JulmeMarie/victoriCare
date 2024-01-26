@@ -1,0 +1,29 @@
+.ColumnFilter {
+    position: relative;
+    max-width: 20rem;
+}
+
+.ColumnFilter-toggle {
+    min-width: 18rem;
+    background-color: #f9f9f9;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.ColumnFilter-lists {
+    position: absolute;
+    background-color: white;
+    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.1);
+    border: solid rgb(232, 222, 222) 0.01rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.ColumnFilter-lists .DragableBox {
+    width: 50%;
+}

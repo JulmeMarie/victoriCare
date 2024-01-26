@@ -11,27 +11,6 @@
     border: dotted var(--main-color) 1px;
 }
 
-.IndentificationForms ul {
-    display: flex;
-    flex-direction: row;
-    margin: 0;
-    padding: 0;
-}
-
-.IndentificationForms ul li {
-    list-style: none;
-    text-align: center;
-    font-weight: bolder;
-    color: var(--main-color);
-    border-bottom: solid var(--main-color) 1px;
-    cursor: pointer;
-    font-family: var(--title-font-family);
-}
-
-.IndentificationForms ul li.active {
-    border-bottom: solid var(--main-color) 2px;
-}
-
 .form-menu {
     height: 2rem;
     border-bottom: solid white 1px;

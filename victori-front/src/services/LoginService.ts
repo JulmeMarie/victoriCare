@@ -1,8 +1,8 @@
 import { ILogInForm } from "../components/Forms/LoginForm/LoginForm";
 import { defaultResult } from "../utils/global-default-values";
 import { CONTENTTYPES } from "../utils/Constants";
-import { Util } from "../utils/Util";
 import HttpService from "./HttpService";
+import { checkMail, checkPassword } from "../utils/global-util";
 
 export class LogInService {
     logIn = async (formValues: ILogInForm) => {
@@ -19,6 +19,6 @@ export class LogInService {
     }
 
     validate(values: ILogInForm): void {
-        values.disable = !(Util.checkMail(values.email) && Util.checkPassword(values.password));
+        values.disable = !(checkMail(values.email) && checkPassword(values.password));
     }
 }

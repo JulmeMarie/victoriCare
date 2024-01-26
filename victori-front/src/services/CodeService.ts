@@ -2,8 +2,8 @@ import { ILogInForm } from "../components/Forms/LoginForm/LoginForm";
 import { ICodeForm } from "../components/Forms/CodeForm/CodeForm";
 import { defaultResult, successResult } from "../utils/global-default-values";
 import { CONTENTTYPES } from "../utils/Constants";
-import { Util } from "../utils/Util";
 import HttpService from "./HttpService";
+import { checkCode } from "../utils/global-util";
 
 export class CodeService {
     recoverAccount = async (formValues: ICodeForm) => {
@@ -34,6 +34,6 @@ export class CodeService {
     }
 
     validate(values: ICodeForm): void {
-        values.disable = !Util.checkCode(values.code);
+        values.disable = checkCode(values.code);
     }
 }

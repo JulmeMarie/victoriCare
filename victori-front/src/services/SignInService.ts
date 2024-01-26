@@ -1,8 +1,8 @@
 import { ISignInForm } from "../components/Forms/SignInForm/SignInForm";
 import { defaultResult, errorResult, successResult } from "../utils/global-default-values";
 import { CONTENTTYPES } from "../utils/Constants";
-import { Util } from "../utils/Util";
 import HttpService from "./HttpService";
+import { checkMail, checkPassword } from "../utils/global-util";
 
 export class SignInService {
     signIn = async (formValues: ISignInForm) => {
@@ -22,9 +22,9 @@ export class SignInService {
 
     validate(values: ISignInForm): void {
         values.disable = !(
-            Util.checkMail(values.email) &&
-            Util.checkPassword(values.password1) &&
-            Util.checkPassword(values.password2) &&
+            checkMail(values.email) &&
+            checkPassword(values.password1) &&
+            checkPassword(values.password2) &&
             values.password1 === values.password2
         );
     }

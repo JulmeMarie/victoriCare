@@ -1,12 +1,5 @@
 .IndexView {
-    margin: auto;
     margin-top: 355px;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    color: rgb(65, 63, 63);
-    box-sizing: border-box;
 }
 
 article.Second-content__container {
@@ -27,20 +20,6 @@ div.Second-content__cards {
     margin-bottom: 1rem;
     text-align: justify;
     font-size: 1.5rem;
-}
-
-div.First-content__container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-article.Introduction-sentence__box {
-    padding-top: 4rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    box-sizing: border-box;
-    width: 68%;
 }
 
 .Introduction-sentence__description {
@@ -84,12 +63,6 @@ article.Introduction-sentence__box {
     font-size: 1.5rem;
 }
 
-/*
-.Second-content__title::before,
-.Second-content__title::after {
-    content: '~';
-}*/
-
 .Third-content__container {
     width: 100%;
     padding: 1rem;
@@ -99,20 +72,7 @@ article.Introduction-sentence__box {
 @media screen and (max-width: 480px) {
 
     .IndexView {
-        width: 100%;
-        margin: 0;
         margin-top: 290px;
-    }
-
-    div.First-content__container {
-        flex-direction: column;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    article.Introduction-sentence__box {
-        width: 100%;
-        order: 1;
     }
 
     .Introduction-sentence__title {

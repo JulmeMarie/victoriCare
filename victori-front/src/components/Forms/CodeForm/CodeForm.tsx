@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { FaLock, FaEnvelope, FaSpinner } from 'react-icons/fa';
 import { IResult } from '../../../utils/global-interfaces';
-import { ALERTS, FORMNAMES } from '../../../utils/Constants';
+import { ALERTS, CONTENTSNAME } from '../../../utils/Constants';
 import i18n from '../../../utils/languages/I18N';
 import { defaultResult } from '../../../utils/global-default-values';
 import './CodeForm.css';
@@ -20,21 +20,23 @@ export interface ICodeForm {
   code: number,
   id: number,
   disable: boolean,
-  name: string
+  name: string,
+  color: string
 }
 
 export const defaultValues = {
   code: 0,
   id: 0,
   disable: true,
-  name: FORMNAMES.CODE,
+  name: CONTENTSNAME.CODE,
+  color: "#fff"
 } as ICodeForm
 
 const service = new CodeService();
 
 const CodeForm: FC<CodeFormProps> = ({ setFormName }) => {
   const dispatch = useDispatch<AppDispatch>();
-  const userAction = useSelector((state: AppState) => state.common_state.userAction);
+  const userAction = useSelector((state: AppState) => state.commonReducer.userAction);
   const [formValues, setFormValues] = useState<ICodeForm>(defaultValues);
   const [result, setResult] = useState<IResult>(defaultResult);
 
@@ -56,7 +58,7 @@ const CodeForm: FC<CodeFormProps> = ({ setFormName }) => {
         if (response.data) {
           dispatch(setUserAction({ ...userAction, result: response }));
           setTimeout(() => {
-            setFormName(FORMNAMES.PASSWORD)
+            setFormName(CONTENTSNAME.PASSWORD)
           }, 1000);
         }
         else if (response.isError) {
@@ -72,7 +74,7 @@ const CodeForm: FC<CodeFormProps> = ({ setFormName }) => {
         if (response.data) {
           dispatch(setUserAction({ ...userAction, result: response }));
           setTimeout(() => {
-            setFormName(FORMNAMES.LOGIN_OWNER)
+            setFormName(CONTENTSNAME.LOGIN_OWNER)
           }, 1000);
         }
         else if (response.isError) {
@@ -103,6 +105,16 @@ const CodeForm: FC<CodeFormProps> = ({ setFormName }) => {
             onChange={(event) => handleChange("code", event.target.value)}
             value={formValues.email} />
         </div>
+        <div className='row input-row'>
+          <input
+            className='col-100'
+            type="color"
+            id="color"
+            name="color"
+            placeholder={i18n.t("code.typeCode")}
+            onChange={(event) => handleChange("color", event.target.value)}
+            value={formValues.color} />
+        </div>
         <div className='row form-footer'>
           <SubmitButton
             label={i18n.t("code.send")}
@@ -112,7 +124,7 @@ const CodeForm: FC<CodeFormProps> = ({ setFormName }) => {
         <div className='row'>
           <div
             className='form-link text-center'
-            onClick={() => { setFormName(FORMNAMES.LOGIN_OWNER) }}>{i18n.t("signin.havingaccount")}
+            onClick={() => { setFormName(CONTENTSNAME.LOGIN_OWNER) }}>{i18n.t("signin.havingaccount")}
           </div>
         </div>
       </form>

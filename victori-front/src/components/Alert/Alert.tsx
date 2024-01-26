@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { AlertType } from '../../utils/global-interfaces';
+import { KeyPair } from '../../utils/global-interfaces';
 import './Alert.css';
 
 interface AlertProps {

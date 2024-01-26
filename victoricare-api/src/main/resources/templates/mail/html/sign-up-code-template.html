@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title th:remove="all">Template for HTML sign up code</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body style="font-family: Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	font-family:Arial, Helvetica, sans-serif;
+	text-align: justify;">
+	<div style="max-width: 30rem !important; 
+		margin: auto !important; 
+		border-radius: 0.5rem; 
+		padding: 1rem !important;
+		box-sizing: border-box;">
+		
+		<header id="mail-header" style="margin-bottom: 1rem;">Bonjour <span th:text="${pseudo}"></span>,</header>
+		
+		<main style="margin: 2rem 0;">
+			<p>Nous avons pris contact avec vous pour vous confirmer votre adresse email et vous demander un code de
+				validation.</p>
+			<p>Veuillez utiliser ce code pour activer votre compte et vous connecter à votre espace personnel :</p>
+			<div style="margin-bottom: 1; padding: 1rem; 
+				box-sizing: border-box; 
+				background-color: rgb(243, 234, 235) !important; 
+				color: black; text-align:center;">
+				<div style="font-size: smaller; margin-bottom: 1rem;">Code de vérification : </div>
+				<div th:text="${code}"
+					style="font-weight: bolder; padding: 1rem; background-color: white; width: fit-content; margin: auto;">
+					123456</div>
+				<div style="font-size: x-small; margin-top: 1rem;">(Ce code expire dans <span th:text="${timeout}">120</span> minutes.) </div>
+			</div>
+			<p>
+				Vous pouvez alternativement valider votre inscription en cliquant sur :
+				<a th:href="@{${frontEndURL} + 'sign-up/code-form/' + ${code} + '/' + ${id}}">Je valide mon compte</a>
+			</p>
+			<p>Date d'inscription : <span
+					th:text="${#dates.format(creationDate, 'dd-MM-yyyy HH:mm:ss')}">19-02/2023</span>.</p>
+		</main>
+		
+		<footer style="margin-top: 1rem;">
+			<p style="margin-top: 1rem;">L'équipe VictoriCare vous remercie de votre inscription.</p>
+			<p>A tout de suite sur <a th:href="@{${frontEndURL} + '/login-form'}">VictoriCare.fr</a></p>
+			<p style="margin-top: 1rem; font-size: x-small;">
+				Si vous avez des questions ou avez besoin d'aide, n'hésitez pas à nous contacter via notre 
+				<a th:href="@{${frontEndURL} + '/contact-form'}">formulaire de contact</a> : 
+				<a th:href="@{${frontEndURL} + '/contact-form'}">Contactez-nous</a></p>
+			<p style="background-image: url('../images/logo-name-x.png'); 
+				width: 10rem; 
+				height:4rem; 
+				background-size:contain; 
+				background-repeat: no-repeat;
+				margin-top: 2rem;"></p>
+		</footer>
+	</div>
+</body>
+
+</html>

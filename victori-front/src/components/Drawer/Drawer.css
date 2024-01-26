@@ -31,19 +31,9 @@
     box-sizing: border-box;
     margin-bottom: 0.1rem;
     background-color: rgb(252, 215, 222, 0.2);
-    /*rgb(206, 97, 115);*/
-    /*rgb(249, 171, 183);*/
     border-radius: 0.1rem;
     display: flex;
     flex-direction: row;
-}
-
-.fa-icon {
-    margin-top: 0.15rem;
-}
-
-.menu-text {
-    margin-left: 0.5rem;
 }
 
 .Drawer-menu .Language ul {
@@ -60,8 +50,6 @@
     display: none;
 }
 
-.Drawer__body {}
-
 .Drawer__content {
     width: 30%;
     position: absolute;
@@ -72,7 +60,6 @@
     box-sizing: border-box;
     animation: translate 0.3s ease-in-out;
     background-color: white;
-    /*rgb(254, 243, 245);*/
 }
 
 .Drawer__close {
@@ -93,7 +80,6 @@
     to {
         right: 0;
     }
-
 }
 
 @media screen and (max-width: 768px) {

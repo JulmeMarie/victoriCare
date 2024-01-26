@@ -3,6 +3,7 @@ import { IResult, IUserAction, LogIn, User } from '../../utils/global-interfaces
 import { appActions } from '../actions/app-actions';
 import { EDeviceType, ELanguageType } from '../../utils/global-types';
 import { DEFAULT_LANG } from '../../utils/languages/I18N';
+import { mockLogin } from '../../utils/global-default-values';
 
 export interface IAppState {
     documentation: IResult;
@@ -16,12 +17,12 @@ export interface IAppState {
 }
 
 export const appSlice = createSlice({
-    name: "common_state",
+    name: "commonReducer",
     initialState: {
         documentation: {},
         comments: {},
         token: null,
-        logIn: null,
+        logIn: mockLogin,
         userAction: {},
         scroll: 0,
         lang: DEFAULT_LANG,

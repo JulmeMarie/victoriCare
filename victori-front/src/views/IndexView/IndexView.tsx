@@ -1,65 +1,78 @@
 import { FC } from 'react';
-import { useOutlet } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import CommentContainer from '../../components/CommentContainer/CommentContainer';
 import ContactForm from '../../components/Forms/ContactForm/ContactForm';
 import ServiceCard from '../../components/ServiceCard/ServiceCard';
 import Sidebar from '../../components/Sidebar/Sidebar';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './IndexView.css';
-import { DocumentationService } from '../../services/DocumentationService';
 import { AppState } from '../../redux/store';
-import { LogIn } from '../../utils/global-interfaces';
+import { EContentNameType } from '../../utils/global-types';
+import I18N from '../../utils/languages/I18N';
 
 interface IndexViewProps {
-  logIn: LogIn | null;
+  formName: EContentNameType
 }
-export interface Service {
+
+export interface IHelp {
+  text: string,
+  image: string
+}
+
+export interface IService {
   title: string,
-  paragraphs: string[],
+  paragraphs: Array<string>,
   icon: string
 }
 
-const docService = DocumentationService.create();
+export interface IVictoriHelp {
+  title: string,
+  contents: Array<IHelp>
+}
 
-const IndexView: FC<IndexViewProps> = ({ logIn }) => {
-  const documentation = useSelector((state: AppState) => state.common_state.documentation);
-  const dispatch = useDispatch();
-  const outlet = useOutlet();
+export interface IVictoriService {
+  title: string,
+  contents: Array<IService>
+}
 
-  if (!documentation.isLoading && !documentation.isLoaded) {
-    docService.setDispatch(dispatch);
-    docService.initDoc();
+const IndexView: FC<IndexViewProps> = ({ formName }) => {
+  const logIn = useSelector((state: AppState) => state.commonReducer.logIn);
+  const victoriHelp = I18N.t("victoriHelp") as IVictoriHelp;
+  const victoriService = I18N.t("victoriService") as IVictoriService;
+
+  if (logIn) {
+    console.log("redirect to home");
+    return <Navigate to="/home" />
   }
 
+
   return (
-    <main className='IndexView' data-testid="IndexView">
-      {documentation.isLoading && <div>On est en loading...</div>}
-      {documentation.isError && <div>Il y une erreur : {documentation.error}</div>}
+    <main className='IndexView main-page' data-testid="IndexView">
       <div className='First-content__container'>
         {
-          outlet ||
-          <>{
-            documentation.data && <article className='Introduction-sentence__box' id="about-us">
-              <h1 className='title Introduction-sentence__title'>COMMENT VICTORICARE VOUS AIDE ? </h1>
-              {documentation.data.catchSetences.map((sentence: any, index: number) =>
-                <section className='Introduction-sentence__description' key={index}>
-                  <p>{sentence.description}</p>
-                  <figure className='Introduction-sentence__image'>
-                    <img src={process.env.PUBLIC_URL + sentence.img} alt={sentence.img} />
-                  </figure>
-                </section>
-              )}
-            </article>
-          }
-          </>
+          victoriHelp &&
+          <article className='left-main-content' id="about-us">
+            <h1 className='title Introduction-sentence__title'>{victoriHelp.title} </h1>
+            {victoriHelp.contents.map((content: IHelp, index: number) =>
+              <section className='Introduction-sentence__description' key={index}>
+                <p>{content.text}</p>
+                <figure className='Introduction-sentence__image'>
+                  <img src={process.env.PUBLIC_URL + content.image} alt={content.image} />
+                </figure>
+              </section>
+            )}
+          </article>
         }
-        <Sidebar />
+        <Sidebar contentNameProp={formName} />
       </div>
-      {documentation.data &&
+      {victoriService &&
         <article className='Second-content__container'>
-          <h1 className='title Second-content__title'>CE QUE NOUS OFFRONS </h1>
+          <h1 className='title Second-content__title'>{victoriService.title} </h1>
           <div className='Second-content__cards'>
-            {documentation.data.servicesTab.map((serv: any, index: number) => <ServiceCard key={index} service={serv} />)}
+            {
+              victoriService.contents.map((serv: IService, index: number) =>
+                <ServiceCard key={index} service={serv} />)
+            }
           </div>
         </article>}
       <article className='Third-content__container'>

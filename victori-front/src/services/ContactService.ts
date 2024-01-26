@@ -1,8 +1,8 @@
 import { IContactForm } from "../components/Forms/ContactForm/ContactForm";
 import { defaultResult, errorResult, successResult } from "../utils/global-default-values";
 import { CONTENTTYPES } from "../utils/Constants";
-import { Util } from "../utils/Util";
 import HttpService from "./HttpService";
+import { checkMail, checkMessage, checkName, checkSubject } from "../utils/global-util";
 
 export class ContactService {
     contact = async (formValues: IContactForm) => {
@@ -21,10 +21,10 @@ export class ContactService {
     }
     validate(values: IContactForm): void {
         values.disable = !(
-            Util.checkMail(values.email) &&
-            Util.checkName(values.username) &&
-            Util.checkSubject(values.subject) &&
-            Util.checkMessage(values.message)
+            checkMail(values.email) &&
+            checkName(values.username) &&
+            checkSubject(values.subject) &&
+            checkMessage(values.message)
         );
     }
 }

@@ -1,10 +1,11 @@
 import React, { FC, ReactNode } from 'react';
 import { FaBaby, FaBirthdayCake, FaChild, FaAngleLeft, FaAngleRight, FaQuoteLeft } from 'react-icons/fa';
-import { Service } from '../../views/IndexView/IndexView';
+import { IService } from '../../views/IndexView/IndexView';
+
 import './ServiceCard.css';
 
 interface ServiceCardProps {
-  service: Service
+  service: IService
 }
 
 const icons = [

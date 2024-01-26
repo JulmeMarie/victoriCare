@@ -2,8 +2,8 @@
 import { IPasswordForm } from "../components/Forms/PasswordForm/PasswordForm";
 import { defaultResult, errorResult, successResult } from "../utils/global-default-values";
 import { CONTENTTYPES } from "../utils/Constants";
-import { Util } from "../utils/Util";
 import HttpService from "./HttpService";
+import { checkPassword } from "../utils/global-util";
 
 export class PasswordService {
     reset = async (formValues: IPasswordForm) => {
@@ -23,8 +23,8 @@ export class PasswordService {
 
     validate(values: IPasswordForm): void {
         values.disable = !(
-            Util.checkPassword(values.password1) &&
-            Util.checkPassword(values.password2) &&
+            checkPassword(values.password1) &&
+            checkPassword(values.password2) &&
             values.password1 === values.password2
         );
     }

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { FaLock, FaEnvelope, FaSpinner } from 'react-icons/fa';
 import { IResult } from '../../../utils/global-interfaces';
-import { ALERTS, FORMNAMES } from '../../../utils/Constants';
+import { ALERTS, CONTENTSNAME } from '../../../utils/Constants';
 import i18n from '../../../utils/languages/I18N';
 import { defaultResult } from '../../../utils/global-default-values';
 import './RecoveryForm.css';
@@ -22,7 +22,7 @@ export interface IRecoveryForm {
 export const defaultValues = {
   email: "",
   disable: true,
-  name: FORMNAMES.RECOVERY
+  name: CONTENTSNAME.RECOVERY
 } as IRecoveryForm
 
 const service = new RecoveryService();
@@ -46,7 +46,7 @@ const RecoveryForm: FC<RecoveryFormProps> = ({ setFormName }) => {
       if (response.data) {
         dispatch(setUserAction({ name: "recovery", result: response }));
         setTimeout(() => {
-          setFormName(FORMNAMES.CODE)
+          setFormName(CONTENTSNAME.CODE)
         }, 1000);
       }
       else if (response.isError) {
@@ -89,7 +89,7 @@ const RecoveryForm: FC<RecoveryFormProps> = ({ setFormName }) => {
         <div className='row'>
           <div
             className='form-link text-center'
-            onClick={() => { setFormName(FORMNAMES.LOGIN_OWNER) }}>{i18n.t("signin.havingaccount")}
+            onClick={() => { setFormName(CONTENTSNAME.LOGIN_OWNER) }}>{i18n.t("signin.havingaccount")}
           </div>
         </div>
       </form>

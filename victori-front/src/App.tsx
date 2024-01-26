@@ -8,13 +8,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { AppState } from './redux/store';
 import { setScroll } from './redux/reducers/app-reducer';
 import { AppDispatch } from './redux/store';
-import Sidebar from './components/Sidebar/Sidebar';
 import Drawer from './components/Drawer/Drawer';
-import { ELanguageType } from './utils/global-types';
 const App = () => {
   const dispatch = useDispatch<AppDispatch>();
-  const logIn = useSelector((state: AppState) => state.common_state.logIn);
-  const lang = useSelector((state: AppState) => state.common_state.lang);
+  const lang = useSelector((state: AppState) => state.commonReducer.lang);
+
+  console.log("Current language :", lang);
 
   useEffect(() => {
     dispatch(setScroll(window.pageYOffset));
@@ -26,10 +25,10 @@ const App = () => {
   return (
     <div className='App'>
       <BrowserRouter>
-        <Header logIn={logIn} />
-        <Drawer logIn={logIn} />
-        <Routing logIn={logIn} />
-        <Footer logIn={logIn} />
+        <Header />
+        <Drawer />
+        <Routing />
+        <Footer />
       </BrowserRouter>
     </div>
   );
