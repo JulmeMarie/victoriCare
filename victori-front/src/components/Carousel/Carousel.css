@@ -1,34 +1,4 @@
 .Carousel {
-    width: 100%;
-    position: absolute;
-    background-color: rgb(249, 171, 183);
-    /*rgb(188, 79, 97);*/
-    box-sizing: border-box;
-}
-
-section.hide {
-    display: none;
-}
-
-section.show {
-    display: block;
-}
-
-.Carousel-wrapper {
-    position: relative;
-    width: 80%;
-    height: inherit;
-    margin: auto;
-    margin-top: 3rem;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
-    background-color: rgb(206, 97, 115);
-    background-image: url('../../../public/bg.png'), url('../../../public/logo-t.png');
-    background-repeat: no-repeat;
-    background-position: right 20em bottom 1%, right 1rem bottom 1%;
-    background-size: contain;
-}
-
-.Carousel-box {
     width: 75%;
     height: inherit;
     overflow: hidden;
@@ -70,7 +40,7 @@ section.show {
 }
 
 h1.Carousel-item__title {
-    color: white;
+    color: rgb(249, 171, 183);
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
 }
@@ -84,16 +54,16 @@ h2.Carousel-item__title {
     margin-left: 0;
     background-color: var(--main-color-300);
     border-radius: 0.2rem;
-    width: 60%;
-    height: 80px;
+    width: 55%;
+    height: 70px;
     box-sizing: border-box;
     position: relative;
-    /*border: 1mm ridge rgba(211, 220, 50, .6);*/
-    /*border: solid rgba(211, 220, 50, .6) 0.1rem;*/
+    border: dotted var(--main-color) 1px;
 }
 
 .Carousel-item__description {
-    color: white;
+    color: rgb(249, 171, 183);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: justify;
     font-size: 0.9rem;
     display: -webkit-box;
@@ -115,14 +85,12 @@ h2.Carousel-item__title {
     text-transform: uppercase;
     width: 50%;
     text-align: left;
-    /*background-color: rgb(206, 97, 115);*/
 }
 
 .Carousel-item__link a {
     display: inline-block;
     padding: 0.5rem 1rem;
     text-decoration: none;
-    box-shadow: 1px 1px 3px white;
 }
 
 .Carousel-item__link a:nth-child(1) {
@@ -167,15 +135,7 @@ h2.Carousel-item__title {
 }
 
 @media screen and (max-width: 480px) {
-    .Carousel-wrapper {
-        width: 100% !important;
-        margin: 0 !important;
-        box-sizing: border-box;
-        background-image: url('../../../public/bg.png');
-        background-position: left 1em top 0;
-    }
-
-    .Carousel-box {
+    .Carousel {
         width: 100% !important;
         box-sizing: border-box;
     }
@@ -205,7 +165,7 @@ h2.Carousel-item__title {
         font-size: 0.9rem;
     }
 
-    .Carousel-box {
+    .Carousel {
         border: solid transparent 1rem
     }
 }

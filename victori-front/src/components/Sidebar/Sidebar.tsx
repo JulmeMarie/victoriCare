@@ -1,31 +1,32 @@
 import React, { FC, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { AppState } from '../../redux/store';
-import { FORMNAMES } from '../../utils/Constants';
+import { CONTENTSNAME } from '../../utils/Constants';
+import { EContentNameType } from '../../utils/global-types';
 import i18n from '../../utils/languages/I18N';
 import CodeForm from '../Forms/CodeForm/CodeForm';
 import LoginForm from '../Forms/LoginForm/LoginForm';
 import PasswordForm from '../Forms/PasswordForm/PasswordForm';
 import RecoveryForm from '../Forms/RecoveryForm/RecoveryForm';
 import SignInForm from '../Forms/SignInForm/SignInForm';
+import ProgressCareList from '../ProgressCareList/ProgressCareList';
 import Tooltip from '../Tooltip/Tooltip';
 import './Sidebar.css';
 
 interface SidebarProps {
-
+  contentNameProp: EContentNameType
 }
 
-const Sidebar: FC<SidebarProps> = () => {
-  const [formName, setFormName] = useState<string>(FORMNAMES.LOGIN_OWNER);
+const Sidebar: FC<SidebarProps> = ({ contentNameProp }) => {
+  const [contentName, setContentName] = useState<string>(contentNameProp);
   return (
     <aside className="Sidebar">
-      <section className="IndentificationForms">
-        {(formName === FORMNAMES.LOGIN_OWNER || formName === FORMNAMES.LOGIN_ACCESS) && <LoginForm setFormName={setFormName} />}
-        {formName === FORMNAMES.RECOVERY && <RecoveryForm setFormName={setFormName} />}
-        {formName === FORMNAMES.SIGNIN && <SignInForm setFormName={setFormName} />}
-        {formName === FORMNAMES.CODE && <CodeForm setFormName={setFormName} />}
-        {formName === FORMNAMES.PASSWORD && <PasswordForm setFormName={setFormName} />}
-      </section>
+      {(contentName === CONTENTSNAME.LOGIN_OWNER || contentName === CONTENTSNAME.LOGIN_ACCESS) && <LoginForm setFormName={setContentName} />}
+      {contentName === CONTENTSNAME.RECOVERY && <RecoveryForm setFormName={setContentName} />}
+      {contentName === CONTENTSNAME.SIGNIN && <SignInForm setFormName={setContentName} />}
+      {contentName === CONTENTSNAME.CODE && <CodeForm setFormName={setContentName} />}
+      {contentName === CONTENTSNAME.PASSWORD && <PasswordForm setFormName={setContentName} />}
+      {contentName === CONTENTSNAME.PROGRESSCARES && <ProgressCareList />}
     </aside>
   );
 }

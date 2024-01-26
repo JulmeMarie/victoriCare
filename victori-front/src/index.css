@@ -13,7 +13,10 @@
   --title-font-family: cursive !important;
   --second-title-size: 1.5rem !important;
   --first-title-size: 2rem !important;
-
+  --care-color: rgb(255, 105, 180);
+  --event-color: rgb(226, 90, 233);
+  --access-color: rgb(233, 152, 46);
+  --firstname-color: rgb(63, 193, 161);
 }
 
 body {
@@ -62,4 +65,90 @@ code {
 
 #root {
   width: 100%;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.title,
+p {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.content-title {
+  color: var(--main-color);
+  font-size: 1.8rem;
+}
+
+.danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+.info {
+  color: #004085;
+  background-color: #cce5ff;
+  border-color: #b8daff;
+}
+
+.spinner svg {
+  animation: rotate infinite 2s;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  color: var(--main-color);
+}
+
+.spinner-2x svg {
+  height: 2rem;
+  width: 2rem;
+  left: 45%;
+}
+
+.spinner {
+  height: 10rem;
+  position: relative;
+}
+
+.small-spinner {
+  animation: rotate infinite 2s;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

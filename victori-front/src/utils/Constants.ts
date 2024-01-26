@@ -12,6 +12,11 @@ export const ALERTS = {
     ERROR: "error"
 } as const;
 
+export const ORDERS = {
+    ASC: "ASC",
+    DESC: "DESC"
+} as const;
+
 export const DIALOGS = {
     INFO: "info",
     ALERT: "Alerte",
@@ -30,7 +35,6 @@ export const RIGHTS = {
     ADMINISTRATOR: "administrator"
 };
 
-
 export const ACTIONS = {
     UPDATE_EMAIL: "update_email",
     UPDATE_PASSWORD: "update_password",
@@ -43,14 +47,15 @@ export const DIRECTIONS = {
     RIGHT: "right",
 } as const
 
-export const FORMNAMES = {
+export const CONTENTSNAME = {
     LOGIN_OWNER: 'login-owner-form',
     LOGIN_ACCESS: 'login-access-form',
     RECOVERY: "login-recovery-form",
     SIGNIN: "signin-form",
     CODE: "code-form",
     PASSWORD: "password-form",
-    CONTACT: "contact-form"
+    CONTACT: "contact-form",
+    PROGRESSCARES: "progress-care-list"
 } as const;
 
 export const CONTENTTYPES = {

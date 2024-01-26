@@ -4,13 +4,6 @@
     width: 100%;
 }
 
-.Language div {
-    /*padding-right: 1rem;
-    padding-left: 1rem;*/
-    /*text-align: left;
-    border-left: solid white 1px;*/
-}
-
 .Language ul {
     margin: 0;
     padding: 0;
@@ -32,6 +25,5 @@
 
 .Language ul li:hover {
     background-color: pink;
-
     transition: all ease-in-out 0.5s;
 }

@@ -1,0 +1,23 @@
+.EntryFilter {
+    display: flex;
+    flex-direction: row;
+    margin-left: 1rem;
+}
+
+.EntryFilter>* {
+    margin: auto;
+}
+
+.EntryFilter>div,
+.EntryFilter>label {
+    line-height: 2rem;
+}
+
+.EntryFilter select {
+    padding: 0 0.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    height: fit-content;
+    width: 4rem;
+    padding: 0.2rem 0.5rem;
+}

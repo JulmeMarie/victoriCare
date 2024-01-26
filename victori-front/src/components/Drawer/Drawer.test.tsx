@@ -5,7 +5,7 @@ import Drawer from './Drawer';
 
 describe('<Drawer />', () => {
   test('it should mount', () => {
-    render(<Drawer logIn={null} />);
+    render(<Drawer />);
 
     const sideNav = screen.getByTestId('Drawer');
 

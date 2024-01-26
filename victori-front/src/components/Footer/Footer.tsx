@@ -3,7 +3,7 @@ import './Footer.css';
 import { Link } from 'react-router-dom';
 import { LogIn } from '../../utils/global-interfaces';
 interface FooterProps {
-  logIn: LogIn | null
+
 }
 
 const Footer: FC<FooterProps> = () => (

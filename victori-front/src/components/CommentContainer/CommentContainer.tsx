@@ -19,7 +19,7 @@ const commentService = new CommentService();
 const CommentContainer: FC<CommentContainerProps> = () => {
   const [translateX, setTranslateX] = useState(0);
   const [stop, setStop] = useState(false);
-  const comments = useSelector((state: AppState) => state.common_state.comments);
+  const comments = useSelector((state: AppState) => state.commonReducer.comments);
   const dispatch = useDispatch();
 
   if (!comments.isLoading && !comments.isLoaded) {

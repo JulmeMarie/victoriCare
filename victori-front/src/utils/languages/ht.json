@@ -55,6 +55,28 @@
             "message": "Antre mesaj ou a",
             "messageFields": "Bonjou mwen kontakte nou paske....",
             "send": "voye mesaj"
-        }
+        },
+        "carousel": [
+            {
+                "title1": "Jere arive tibebe",
+                "title2": "ti bebe w la",
+                "description": "Ou ka deja panse sou premye non pou ti pwoteje ou. Li lè tou pou entèvyou prenatal bonè ou ak doktè ou oswa fanmsaj ou."
+            },
+            {
+                "title1": "Jere swen",
+                "title2": "ti bebe w la",
+                "description": "Ou kapab jere swen ki aplike sou ti bebe w la"
+            },
+            {
+                "title1": "Jesyon evènman",
+                "title2": "Pou pitit ou yo ak ou",
+                "description": "ou kapab planifye anivèsè, repa, batèm, maryaj sou victoricare"
+            },
+            {
+                "title1": "Jere arive tibebe",
+                "title2": "ti bebe w la",
+                "description": "Ou ka deja panse sou premye non pou ti pwoteje ou. Li lè tou pou entèvyou prenatal bonè ou ak doktè ou oswa fanmsaj ou."
+            }
+        ]
     }
 }

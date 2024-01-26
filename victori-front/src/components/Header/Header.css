@@ -2,8 +2,6 @@
   position: fixed;
   top: 0;
   width: 100%;
-  /*background-color:#dc3545;*/
-  /*background-image: url("../images/bebe.jpg");*/
   background-position: center;
   background-size: 100%;
   color: white;
@@ -23,6 +21,81 @@
   background: var(--main-color);
   position: relative;
   box-sizing: border-box;
+}
+
+.Header .Header__main-content {
+  width: 100%;
+  position: absolute;
+  background-color: rgb(249, 171, 183);
+  box-sizing: border-box;
+}
+
+.Header__action-buttons {
+  width: 40%;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Header__action-buttons button {
+  border: 0;
+  width: 50%;
+  height: 50%;
+  font-size: 0.9rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  cursor: pointer;
+  color: white;
+  transition: all 0.5s ease-in-out;
+  border-radius: 0;
+  position: relative;
+}
+
+.Header__action-buttons button:hover {
+  font-size: 1rem;
+  transition: all 0.5s ease-in-out;
+  border: solid rgba(249, 192, 192, 0.64) 0.01rem;
+  color: white;
+}
+
+.action-button__icon {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.create-event-button {
+  background-color: var(--event-color);
+}
+
+.create-care-button {
+  background-color: var(--care-color);
+}
+
+.create-access-button {
+  background-color: var(--access-color);
+}
+
+.suggest-firstname-button {
+  background-color: var(--firstname-color);
+}
+
+.Header .main-content__wrapper {
+  position: relative;
+  width: 80%;
+  height: inherit;
+  margin: auto;
+  margin-top: 3rem;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1);
+  background-color: rgb(206, 97, 115);
+  background-image: url('../../../public/bg.png'), url('../../../public/logo-t.png');
+  background-repeat: no-repeat;
+  background-position: right 20em bottom 1%, right 1rem bottom 1%;
+  background-size: contain;
 }
 
 .wrapper-logo {
@@ -54,10 +127,12 @@
   flex-direction: row;
   height: 100%;
   font-family: var(--title-font-family);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-transform: capitalize;
   position: relative;
   margin-right: 5%;
   z-index: 2;
+  font-weight: 100;
 }
 
 .Header-menu li {
@@ -73,8 +148,7 @@
   text-transform: capitalize;
 }
 
-.Header-menu>li>a,
-.Header-menu>li>div {
+.Header-menu>li>a {
   display: block;
   height: 100%;
   color: pink;
@@ -91,7 +165,6 @@
 
 .Header-menu li.active a,
 .Header-menu li:hover a {
-  /*color: var(--main-color);*/
   color: white;
 }
 
@@ -142,6 +215,14 @@
     display: none;
   }
 
+  .Header .main-content__wrapper {
+    width: 100% !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+    background-image: url('../../../public/bg.png');
+    background-position: left 1em top 0;
+  }
+
   .Header-menu__mobile {
     display: block;
     margin-right: 0;
@@ -154,5 +235,9 @@
   .Header-menu__mobile li svg {
     height: 1.5rem;
     width: 1.5rem;
+  }
+
+  .Header__action-buttons {
+    width: 100%;
   }
 }

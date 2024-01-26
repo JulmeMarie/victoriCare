@@ -4,7 +4,7 @@ import './ContactForm.css';
 import i18n from '../../../utils/languages/I18N';
 import { IResult, ISelectOption } from '../../../utils/global-interfaces';
 import SubmitButton from '../SubmitButton/SubmitButton';
-import { ALERTS, FORMNAMES } from '../../../utils/Constants';
+import { ALERTS, CONTENTSNAME } from '../../../utils/Constants';
 import { defaultResult } from '../../../utils/global-default-values';
 import { ContactService } from '../../../services/ContactService';
 import Alert from '../../Alert/Alert';
@@ -34,7 +34,7 @@ const defaultValues = {
   subject: i18n.t(options[0]),
   message: "",
   disable: true,
-  name: FORMNAMES.CONTACT
+  name: CONTENTSNAME.CONTACT
 } as IContactForm;
 
 const service = new ContactService();
